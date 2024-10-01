@@ -3,15 +3,6 @@
 
 ###
 
-<br clear="both">
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=CaioMarinhoSenac&repo=ProjetoCH1C0---Senac&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=false&count_private=true&disable_animations=false&theme=rose_pine&locale=pt-br&hide_border=false&custom_title=Estat%C3%ADsticas%20do%20Reposit%C3%B3rio" height="150" alt="stats graph" /> <br>
-  <img src="https://streak-stats.demolab.com?user=CaioMarinhoSenac&ProjetoCH1C0---Senac&locale=pt-br&mode=weekly&theme=rose_pine&hide_border=false&border_radius=5" height="200" alt="streak graph"  />
-</div>
-
-###
-
 <h2 align="center">Quem Somos</h2>
 
 ###
