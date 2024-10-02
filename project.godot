@@ -12,7 +12,7 @@ config_version=5
 
 config/name="ProjectCH1C0"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [dotnet]
 
