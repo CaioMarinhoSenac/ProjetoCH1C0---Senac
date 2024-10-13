@@ -1,8 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://33xflaukf22j"]
+[gd_scene load_steps=13 format=3 uid="uid://33xflaukf22j"]
 
 [ext_resource type="Script" path="res://Scripts/StateManager.cs" id="1_2ibxi"]
+[ext_resource type="Texture2D" uid="uid://iprcl3bwwb1j" path="res://Sprites/Triste.png" id="2_gyl03"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("stateLabel")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjlbn"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lak0p"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwsyl"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(480, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h05yu"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(720, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f57bt"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(960, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s5y8"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(1200, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdiwq"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(1440, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0u4u"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(1680, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40fnr"]
+atlas = ExtResource("2_gyl03")
+region = Rect2(1920, 0, 240, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kprcr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjlbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lak0p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwsyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h05yu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f57bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s5y8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdiwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0u4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40fnr")
+}],
+"loop": true,
+"name": &"TristeState",
+"speed": 9.0
+}]
+
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,9 +84,8 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 script = ExtResource("1_2ibxi")
-stateLabel = NodePath("ColorRect/Label")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." node_paths=PackedStringArray("animation")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,16 +93,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.595, 0.55, 1)
+script = ExtResource("1_2ibxi")
+animation = NodePath("../AnimatedSprite2D")
 
-[node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 55
-text = "Como que aumenta a fonte??"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 328)
+scale = Vector2(4.8, 4.85926)
+sprite_frames = SubResource("SpriteFrames_kprcr")
+animation = &"TristeState"

@@ -3,19 +3,17 @@ using System;
 
 public partial class StateManager : Control
 {
-    [Export] public Label stateLabel;
+    [Export] public AnimatedSprite2D animation;
 
     BaseState currentState;
 
     // INSTACIA AS CLASSES (ESTADOS)
-    public InicialState inicialState = new InicialState();
-    public MidState midState = new MidState();
-    public FinalState finalState = new FinalState();
+    public TristeState tristeState = new TristeState();
 
     public override void _Ready()
     {
         // define um 'estado atual' = 'estado inicial'
-        currentState = inicialState;
+        currentState = tristeState;
         // entra no estado.
         currentState.EnterState(this);
     }
