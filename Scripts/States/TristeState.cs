@@ -12,11 +12,11 @@ public partial class TristeState : BaseState
 	{
 		if (Input.IsActionJustPressed("PreviousInput"))
 		{
-			State.SwitchState(State.inicialState);
+			State.SwitchState(State.medoState);
 		}
 		if (Input.IsActionJustPressed("NextInput"))
 		{
-			State.SwitchState(State.inicialState);
+			State.SwitchState(State.medoState);
 		}
 	}
 
