@@ -92,7 +92,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 0.595, 0.55, 1)
+color = Color(0.0941176, 0.733333, 0, 1)
 script = ExtResource("1_2ibxi")
 animation = NodePath("../AnimatedSprite2D")
 
