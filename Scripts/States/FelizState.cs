@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public partial class MedoState : BaseState
+public partial class FelizState : BaseState
 {
     public override void EnterState(StateManager State)
     {
-        State.faceAnimation.Play("MedoState");
+        State.faceAnimation.Play("FelizState");
     }
 
     public override void UpdateState(StateManager State)
@@ -24,5 +24,4 @@ public partial class MedoState : BaseState
     {
         
     }
-
 }

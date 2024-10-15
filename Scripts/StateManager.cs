@@ -10,19 +10,27 @@ public partial class StateManager : Control
     - HORARIO DO DIA MUDA BACKGROUND
     - VARIACOES DE ENERGIA
     */
-    [Export] public AnimatedSprite2D animation;
+    [Export] public AnimatedSprite2D faceAnimation;
 
-    BaseState currentState;
+    public BaseState currentState
+    {
+        get { return currentState; }
+        private set { currentState = value; }
+    }
 
     // INSTACIA AS CLASSES (ESTADOS)
     public TristeState tristeState = new TristeState();
     public MedoState medoState = new MedoState();
+    public RaivaState raivaState = new RaivaState();
+    public CoracaoState coracaoState = new CoracaoState();
+    public FelizState felizState = new FelizState();
+
 
 
     public override void _Ready()
     {
         // define um 'estado atual' = 'estado inicial'
-        currentState = tristeState;
+        currentState = felizState;
         // entra no estado.
         currentState.EnterState(this);
     }
@@ -42,9 +50,5 @@ public partial class StateManager : Control
 
         // entra no novo estado
         currentState.EnterState(this);
-    }
-
-    public void SwitchVariant(){
-
     }
 }
