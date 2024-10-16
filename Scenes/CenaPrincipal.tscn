@@ -1,9 +1,10 @@
-[gd_scene load_steps=79 format=3 uid="uid://33xflaukf22j"]
+[gd_scene load_steps=87 format=3 uid="uid://33xflaukf22j"]
 
 [ext_resource type="Texture2D" uid="uid://dw3ojn7v2kml1" path="res://Sprites/Rostos/coração.png" id="2_r2spm"]
 [ext_resource type="Texture2D" uid="uid://bseeosh7rubio" path="res://Sprites/Rostos/Feliz.png" id="3_2x7qw"]
 [ext_resource type="Texture2D" uid="uid://cltj5q3g1raj1" path="res://Sprites/Rostos/Medo.png" id="4_exjqs"]
 [ext_resource type="Script" path="res://Scripts/StateManager.cs" id="5_co3eg"]
+[ext_resource type="Texture2D" uid="uid://jnhwdths7i1f" path="res://Sprites/Rostos/Triste.png" id="5_qnf8n"]
 [ext_resource type="Texture2D" uid="uid://brt1d1yglvw0o" path="res://Sprites/Rostos/Raiva.png" id="5_tahd3"]
 [ext_resource type="Texture2D" uid="uid://dt8600b1o06bo" path="res://Sprites/Olhos/CoracaoOlhos.png" id="6_6t2d2"]
 [ext_resource type="Texture2D" uid="uid://cf0tobrayuw30" path="res://Sprites/Olhos/FelizOlhos.png" id="7_0agpv"]
@@ -143,6 +144,42 @@ region = Rect2(1440, 0, 240, 135)
 atlas = ExtResource("5_tahd3")
 region = Rect2(1680, 0, 240, 135)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lnli"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tjns"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnclp"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(480, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6pgy"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(720, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ostv"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(960, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je57v"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(1200, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3pou"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(1440, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0h5v"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(1680, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t25j"]
+atlas = ExtResource("5_qnf8n")
+region = Rect2(1920, 0, 240, 135)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kprcr"]
 animations = [{
 "frames": [{
@@ -163,8 +200,17 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7smrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7smrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gruhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy17a")
 }],
-"loop": true,
+"loop": false,
 "name": &"CoracaoState",
 "speed": 6.0
 }, {
@@ -195,8 +241,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ww41c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mub8m")
 }],
-"loop": true,
+"loop": false,
 "name": &"FelizState",
 "speed": 6.0
 }, {
@@ -259,12 +308,48 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h0or4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x4p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtl3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngmug")
 }],
-"loop": true,
+"loop": false,
 "name": &"RaivaState",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lnli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tjns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnclp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6pgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ostv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je57v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3pou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0h5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5t25j")
+}],
 "loop": true,
 "name": &"TristeState",
 "speed": 9.0
@@ -277,14 +362,6 @@ region = Rect2(0, 0, 240, 135)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxcjg"]
 atlas = ExtResource("6_6t2d2")
 region = Rect2(240, 0, 240, 135)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1utw"]
-atlas = ExtResource("6_6t2d2")
-region = Rect2(480, 0, 240, 135)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3t4j4"]
-atlas = ExtResource("6_6t2d2")
-region = Rect2(720, 0, 240, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5gpwm"]
 atlas = ExtResource("6_6t2d2")
@@ -412,20 +489,20 @@ animations = [{
 "texture": SubResource("AtlasTexture_cxcjg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h1utw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3t4j4")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5gpwm")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w8r63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8r63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5gpwm")
 }],
 "loop": true,
 "name": &"CoracaoEyes",
-"speed": 6.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -454,8 +531,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tj1uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmqkf")
 }],
-"loop": true,
+"loop": false,
 "name": &"FelizEyes",
 "speed": 6.0
 }, {
@@ -519,7 +599,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kb45p")
 }],
-"loop": true,
+"loop": false,
 "name": &"RaivaEyes",
 "speed": 5.0
 }]
@@ -538,7 +618,7 @@ size_flags_vertical = 6
 position = Vector2(576, 328)
 scale = Vector2(4.8, 4.8)
 sprite_frames = SubResource("SpriteFrames_kprcr")
-animation = &"FelizState"
+animation = &"TristeState"
 script = ExtResource("5_co3eg")
 faceAnimation = NodePath(".")
 
