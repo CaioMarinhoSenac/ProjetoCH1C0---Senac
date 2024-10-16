@@ -58,7 +58,7 @@ public partial class StateManager : AnimatedSprite2D
 
 	public void SwitchState(BaseState state)
 	{
-		// sai do estado anterior
+		// sai do estado atual
 		currentState.LeaveState(this);
 
 		// muda o estado atual

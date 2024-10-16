@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://dw3ojn7v2kml1" path="res://Sprites/Rostos/coração.png" id="2_r2spm"]
 [ext_resource type="Texture2D" uid="uid://bseeosh7rubio" path="res://Sprites/Rostos/Feliz.png" id="3_2x7qw"]
 [ext_resource type="Texture2D" uid="uid://cltj5q3g1raj1" path="res://Sprites/Rostos/Medo.png" id="4_exjqs"]
-[ext_resource type="Script" path="res://Scenes/StateManager.cs" id="5_co3eg"]
+[ext_resource type="Script" path="res://Scripts/StateManager.cs" id="5_co3eg"]
 [ext_resource type="Texture2D" uid="uid://brt1d1yglvw0o" path="res://Sprites/Rostos/Raiva.png" id="5_tahd3"]
 [ext_resource type="Texture2D" uid="uid://dt8600b1o06bo" path="res://Sprites/Olhos/CoracaoOlhos.png" id="6_6t2d2"]
 [ext_resource type="Texture2D" uid="uid://cf0tobrayuw30" path="res://Sprites/Olhos/FelizOlhos.png" id="7_0agpv"]
-[ext_resource type="Script" path="res://Scenes/VariantManager.cs" id="7_rxwxy"]
+[ext_resource type="Script" path="res://Scripts/VariantManager.cs" id="7_rxwxy"]
 [ext_resource type="Texture2D" uid="uid://se0pviqvxs4b" path="res://Sprites/Olhos/MedoOlhos.png" id="8_igy7a"]
 [ext_resource type="Texture2D" uid="uid://c1m6t1qfmqnin" path="res://Sprites/Olhos/RaivaOlhos.png" id="9_hxaxj"]
 
