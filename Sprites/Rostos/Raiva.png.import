@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpgat8pokrv0o"
-path="res://.godot/imported/carangueijoRef.png-cc3ace9efd29bcaed7f964d51d01a35f.ctex"
+uid="uid://brt1d1yglvw0o"
+path="res://.godot/imported/Raiva.png-4e715251a2937abdb3f6ea2d668f5087.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/carangueijoRef.png"
-dest_files=["res://.godot/imported/carangueijoRef.png-cc3ace9efd29bcaed7f964d51d01a35f.ctex"]
+source_file="res://Sprites/Rostos/Raiva.png"
+dest_files=["res://.godot/imported/Raiva.png-4e715251a2937abdb3f6ea2d668f5087.ctex"]
 
 [params]
 

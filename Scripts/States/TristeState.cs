@@ -10,14 +10,7 @@ public partial class TristeState : BaseState
 
 	public override void UpdateState(StateManager State)
 	{
-		if (Input.IsActionJustPressed("PreviousInput"))
-		{
-			State.SwitchState(State.medoState);
-		}
-		else if (Input.IsActionJustPressed("NextInput"))
-		{
-			State.SwitchState(State.medoState);
-		}
+
 	}
 
 	public override void LeaveState(StateManager State)

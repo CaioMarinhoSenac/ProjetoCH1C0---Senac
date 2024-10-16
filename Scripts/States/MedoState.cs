@@ -10,14 +10,7 @@ public partial class MedoState : BaseState
 
     public override void UpdateState(StateManager State)
     {
-        if (Input.IsActionJustPressed("Esquerda-meio"))
-		{
-			State.SwitchState(State.tristeState);
-		}
-		else if (Input.IsActionJustPressed("NextInput"))
-		{
-			State.SwitchState(State.tristeState);
-		}  
+        
     }
 
     public override void LeaveState(StateManager State)
