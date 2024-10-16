@@ -15,12 +15,11 @@ public partial class VariantManager : AnimatedSprite2D
 
     string eyesName;
 
-    float initCooldown = 0f;
     float cooldown = 2.0f; // DELAY ENTRE CADA TROCA DE VARIANTE, PARA DIMINUIR FRENETICIDADE
 
-    float moveSpeed = 0.5f;
+    float moveSpeed = 0.25f;
 
-    float moveDistance = 30.0f; // Ajuste o valor conforme necessário
+    float moveDistance = 25.0f; // Ajuste o valor conforme necessário
 
     public override void _Ready()
     {

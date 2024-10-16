@@ -538,7 +538,7 @@ size_flags_vertical = 6
 position = Vector2(576, 328)
 scale = Vector2(4.8, 4.8)
 sprite_frames = SubResource("SpriteFrames_kprcr")
-animation = &"CoracaoState"
+animation = &"FelizState"
 script = ExtResource("5_co3eg")
 faceAnimation = NodePath(".")
 
@@ -546,7 +546,7 @@ faceAnimation = NodePath(".")
 position = Vector2(576, 328)
 scale = Vector2(4.8, 4.8)
 sprite_frames = SubResource("SpriteFrames_4s30x")
-animation = &"RaivaEyes"
+animation = &"FelizEyes"
 script = ExtResource("7_rxwxy")
 eyesAnimation = NodePath(".")
 stateManager = NodePath("../RostoSprite2D")

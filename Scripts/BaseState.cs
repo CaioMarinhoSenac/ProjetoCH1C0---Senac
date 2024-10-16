@@ -1,8 +1,17 @@
 using Godot;
 
-public abstract class BaseState
+public partial class BaseState : AnimatedSprite2D
 {
-    public abstract void EnterState(StateManager State);
-    public abstract void UpdateState(StateManager State);
-    public abstract void LeaveState(StateManager State);
+    public virtual void EnterState(StateManager State)
+    {
+        State.faceAnimation.Play(this.GetType().Name);
+    }
+    public virtual void UpdateState(StateManager State)
+    {
+
+    }
+    public virtual void LeaveState(StateManager State)
+    {
+
+    }
 }
