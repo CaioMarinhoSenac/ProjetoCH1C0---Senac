@@ -492,7 +492,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"MedoEyes",
-"speed": 5.0
+"speed": 45.0
 }, {
 "frames": [{
 "duration": 1.0,

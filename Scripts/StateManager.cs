@@ -26,8 +26,6 @@ public partial class StateManager : AnimatedSprite2D
 
 	public override void _Process(double delta)
 	{
-		currentState.UpdateState(this);
-
         SearchState();
 	}
 
