@@ -1,6 +1,7 @@
 using Godot;
+using System;
 
-public partial class BaseState : AnimatedSprite2D
+public partial class BaseState : AnimatedSprite
 {
     protected AnimationsLib animationsLib = new AnimationsLib();
 
@@ -22,7 +23,7 @@ public partial class BaseState : AnimatedSprite2D
 
         SwitchFace();
     }
-    public override void _Process(double delta)
+    public override void _Process(float delta)
     {
         SearchDirection();
     }
@@ -46,50 +47,50 @@ public partial class BaseState : AnimatedSprite2D
         //  ESQUERDA
         if (Input.IsActionJustPressed("Esquerda-cima"))
         {
-            targetPosition.X = originalPosition.X - moveDistance;
-            targetPosition.Y = originalPosition.Y - moveDistance;
+            targetPosition.x = originalPosition.x - moveDistance;
+            targetPosition.y = originalPosition.y - moveDistance;
         }
         else if (Input.IsActionJustPressed("Esquerda-meio"))
         {
-            targetPosition.X = originalPosition.X - moveDistance;
-			targetPosition.Y = originalPosition.Y;
+            targetPosition.x = originalPosition.x - moveDistance;
+			targetPosition.y = originalPosition.y;
         }
         else if (Input.IsActionJustPressed("Esquerda-baixo"))
         {
-            targetPosition.X = originalPosition.X - moveDistance;
-            targetPosition.Y = originalPosition.Y + moveDistance;
+            targetPosition.x = originalPosition.x - moveDistance;
+            targetPosition.y = originalPosition.y + moveDistance;
         }
         //  MEIO
         else if (Input.IsActionJustPressed("Meio-cima"))
         {
-			targetPosition.X = originalPosition.X;
-            targetPosition.Y = originalPosition.Y - moveDistance;
+			targetPosition.x = originalPosition.x;
+            targetPosition.y = originalPosition.y - moveDistance;
         }
 		else if (Input.IsActionJustPressed("Meio-meio"))
         {
-			targetPosition.X = originalPosition.X;
-            targetPosition.Y = originalPosition.Y;
+			targetPosition.x = originalPosition.x;
+            targetPosition.y = originalPosition.y;
         }
         else if (Input.IsActionJustPressed("Meio-baixo"))
         {
-			targetPosition.X = originalPosition.X;
-            targetPosition.Y = originalPosition.Y + moveDistance;
+			targetPosition.x = originalPosition.x;
+            targetPosition.y = originalPosition.y + moveDistance;
         }
         //  DIREITA
         else if (Input.IsActionJustPressed("Direita-cima"))
         {
-            targetPosition.X = originalPosition.X + moveDistance;
-            targetPosition.Y = originalPosition.Y - moveDistance;
+            targetPosition.x = originalPosition.x + moveDistance;
+            targetPosition.y = originalPosition.y - moveDistance;
         }
         else if (Input.IsActionJustPressed("Direita-meio"))
         {
-            targetPosition.X = originalPosition.X + moveDistance;
-			targetPosition.Y = originalPosition.Y;
+            targetPosition.x = originalPosition.x + moveDistance;
+			targetPosition.y = originalPosition.y;
         }
         else if (Input.IsActionJustPressed("Direita-baixo"))
         {
-            targetPosition.X = originalPosition.X + moveDistance;
-            targetPosition.Y = originalPosition.Y + moveDistance;
+            targetPosition.x = originalPosition.x + moveDistance;
+            targetPosition.y = originalPosition.y + moveDistance;
         }
 
         if (targetPosition != StateManager.faceAnimation.Position)

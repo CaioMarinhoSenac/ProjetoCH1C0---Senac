@@ -1,16 +1,22 @@
 using Godot;
 using System;
 
-public partial class AnimationsLib : Node
+public class AnimationsLib : Node
 {
-    private void MoveTo(AnimatedSprite2D target, Vector2 targetPosition, float moveSpeed)
+    private void MoveTo(AnimatedSprite target, Vector2 targetPosition, float moveSpeed)
     {
-        Tween tween = target.GetTree().CreateTween();
-        tween.TweenProperty(target, "position:x", targetPosition.X, moveSpeed);
-        tween.Parallel().TweenProperty(target, "position:y", targetPosition.Y, moveSpeed);
+        Tween tween = new Tween();
+        target.AddChild(tween);
+
+        tween.InterpolateProperty(target, "position:x", target.Position.x, targetPosition.x, moveSpeed);
+        tween.InterpolateProperty(target, "position:y", target.Position.y, targetPosition.y, moveSpeed);
+
+        tween.Connect("tween_completed", this, nameof(OnTweenCompleted), new Godot.Collections.Array { tween });
+
+        tween.Start();
     }
 
-    public void PlayAnimation(AnimatedSprite2D target, string animationName)
+    public void PlayAnimation(AnimatedSprite target, string animationName)
     {
         if (animationName != null)
         {
@@ -22,13 +28,23 @@ public partial class AnimationsLib : Node
     {
         if (tween != null && IsInstanceValid(tween))
         {
-            tween.Kill();
+            tween.StopAll();
+            tween.QueueFree();
         }
     }
 
-    public void MoveToDirection(AnimatedSprite2D eyesAnimation, Vector2 targetPosition, ref Tween tween, float moveSpeed)
+    public void MoveToDirection(AnimatedSprite eyesAnimation, Vector2 targetPosition, ref Tween tween, float moveSpeed)
     {
         KillTween(tween);
+
         MoveTo(eyesAnimation, targetPosition, moveSpeed);
+    }
+
+    public void OnTweenCompleted(Tween tween)
+    {
+        if (tween != null && IsInstanceValid(tween))
+        {
+            tween.QueueFree();
+        }
     }
 }
