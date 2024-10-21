@@ -14,22 +14,23 @@ public partial class StateManager : AnimatedSprite
 	public CoracaoState coracaoState = new CoracaoState();
 	public FelizState felizState = new FelizState();
 
-
+    Vector2 originalPosition;
 
 	public override void _Ready()
 	{
         faceAnimation = this;
         eyesAnimation = GetNode<VariantManager>("../OlhosSprite2D");
 
-		// define um 'estado atual' = 'estado inicial'
+        originalPosition = faceAnimation.Position;
+
 		currentState = felizState;
-		// entra no estado.
-		currentState.EnterState(this);
+		currentState.EnterState(this, originalPosition);
 	}
 
 	public override void _Process(float delta)
 	{
         SearchState();
+        currentState.SearchDirection(faceAnimation.Position);
 	}
 
     public void SearchState(){
@@ -66,6 +67,6 @@ public partial class StateManager : AnimatedSprite
 		currentState = state;
 
 		// entra no novo estado
-		currentState.EnterState(this);
+		currentState.EnterState(this, originalPosition);
 	}
 }

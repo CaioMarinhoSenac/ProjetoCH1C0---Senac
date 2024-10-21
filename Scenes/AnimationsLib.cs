@@ -11,8 +11,6 @@ public class AnimationsLib : Node
         tween.InterpolateProperty(target, "position:x", target.Position.x, targetPosition.x, moveSpeed);
         tween.InterpolateProperty(target, "position:y", target.Position.y, targetPosition.y, moveSpeed);
 
-        tween.Connect("tween_completed", this, nameof(OnTweenCompleted), new Godot.Collections.Array { tween });
-
         tween.Start();
     }
 
@@ -33,11 +31,11 @@ public class AnimationsLib : Node
         }
     }
 
-    public void MoveToDirection(AnimatedSprite eyesAnimation, Vector2 targetPosition, ref Tween tween, float moveSpeed)
+    public void MoveToDirection(AnimatedSprite target, Vector2 targetPosition, ref Tween tween, float moveSpeed)
     {
         KillTween(tween);
 
-        MoveTo(eyesAnimation, targetPosition, moveSpeed);
+        MoveTo(target, targetPosition, moveSpeed);
     }
 
     public void OnTweenCompleted(Tween tween)

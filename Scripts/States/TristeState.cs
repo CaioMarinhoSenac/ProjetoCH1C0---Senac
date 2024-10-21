@@ -3,8 +3,8 @@ using System;
 
 public partial class TristeState : BaseState
 {
-    public override void EnterState(StateManager State){
-        base.EnterState(State);
+    public override void EnterState(StateManager State, Vector2 originalPosition){
+        base.EnterState(State, originalPosition);
 
         State.eyesAnimation.Visible = false;
     }

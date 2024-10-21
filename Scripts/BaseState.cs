@@ -5,34 +5,30 @@ public partial class BaseState : AnimatedSprite
 {
     protected AnimationsLib animationsLib = new AnimationsLib();
 
-    protected Vector2 originalPosition;
-
     protected Tween tween;
 
     protected float moveSpeed = 0.5f;
 
-    protected float moveDistance = 30.0f; // Ajuste o valor conforme necessário
+    protected float moveDistance = 10.0f;
 
     protected StateManager StateManager;
 
-    public virtual void EnterState(StateManager State)
-    {
-        originalPosition = State.faceAnimation.Position;
+    protected Vector2 originalPosition;
 
+    public virtual void EnterState(StateManager State, Vector2 originalPosition)
+    {
         StateManager = State;
+        
+        this.originalPosition = originalPosition;
 
         SwitchFace();
-    }
-    public override void _Process(float delta)
-    {
-        SearchDirection();
     }
     public virtual void LeaveState(StateManager State)
     {
 
     }
 
-    protected virtual void SwitchFace()
+    public virtual void SwitchFace()
     {
         if (this.GetType().Name != null)
         {
@@ -40,9 +36,9 @@ public partial class BaseState : AnimatedSprite
         }
     }
 
-    protected void SearchDirection()
+    public void SearchDirection(Vector2 currentPosition)
     {
-        Vector2 targetPosition = originalPosition;
+        Vector2 targetPosition = currentPosition;
 
         //  ESQUERDA
         if (Input.IsActionJustPressed("Esquerda-cima"))
