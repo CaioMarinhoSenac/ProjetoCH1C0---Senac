@@ -36,7 +36,7 @@ public partial class BaseState : AnimatedSprite
         }
     }
 
-    public void SearchDirection(Vector2 currentPosition)
+    public virtual void SearchDirection(Vector2 currentPosition)
     {
         Vector2 targetPosition = currentPosition;
 

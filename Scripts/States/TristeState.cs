@@ -9,6 +9,11 @@ public partial class TristeState : BaseState
         State.eyesAnimation.Visible = false;
     }
 
+    public override void SearchDirection(Vector2 currentPosition)
+    {
+        return;
+    }
+
     public override void LeaveState(StateManager State)
     {
         base.LeaveState(State);
