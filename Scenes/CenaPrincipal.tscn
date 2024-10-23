@@ -373,8 +373,8 @@ margin_bottom = 300.0
 position = Vector2( 507.2, 327.688 )
 scale = Vector2( 4.025, 4.025 )
 frames = SubResource( 1 )
-animation = "TristeState"
-frame = 2
+animation = "CoracaoState"
+frame = 6
 playing = true
 script = ExtResource( 10 )
 
@@ -384,3 +384,11 @@ scale = Vector2( 4.025, 4.025 )
 frames = SubResource( 2 )
 animation = "FelizEyes"
 script = ExtResource( 11 )
+
+[node name="StateCooldown" type="Timer" parent="CanvasLayer/HBoxContainer"]
+wait_time = 2.5
+one_shot = true
+
+[node name="DirectionCooldown" type="Timer" parent="CanvasLayer/HBoxContainer"]
+wait_time = 1.75
+one_shot = true

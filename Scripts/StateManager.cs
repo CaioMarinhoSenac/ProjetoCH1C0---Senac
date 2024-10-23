@@ -3,8 +3,8 @@ using System;
 
 public partial class StateManager : AnimatedSprite
 {
-    public AnimatedSprite faceAnimation;
-    public VariantManager eyesAnimation;
+	public AnimatedSprite faceAnimation;
+	public VariantManager eyesAnimation;
 	public BaseState currentState;
 
 	// INSTACIA AS CLASSES (ESTADOS)
@@ -14,52 +14,65 @@ public partial class StateManager : AnimatedSprite
 	public CoracaoState coracaoState = new CoracaoState();
 	public FelizState felizState = new FelizState();
 
-    Vector2 originalPosition;
+	Vector2 originalPosition;
+
+	bool canSwitchState = true;
+
+	Timer stateCooldown;
 
 	public override void _Ready()
 	{
-        faceAnimation = this;
-        eyesAnimation = GetNode<VariantManager>("../OlhosSprite2D");
+		faceAnimation = this;
+		eyesAnimation = GetNode<VariantManager>("../OlhosSprite2D");
 
-        originalPosition = faceAnimation.Position;
+		originalPosition = faceAnimation.Position;
+
+		stateCooldown = GetNode<Timer>("../StateCooldown");
+
+		stateCooldown.Connect("timeout", this, "StateCooldown_timeout");
 
 		currentState = felizState;
-		currentState.EnterState(this, originalPosition);
+		currentState.EnterState(this);
 	}
 
 	public override void _Process(float delta)
 	{
-        SearchState();
-        currentState.SearchDirection(faceAnimation.Position);
+		SearchState();
 	}
 
-    public void SearchState(){
-        BaseState newState = currentState;
+	public void SearchState(){
+		BaseState newState = currentState;
 
-        if(Input.IsActionJustPressed("RaivaState")){
-            newState = raivaState;
-        }
-        else if(Input.IsActionJustPressed("TristeState")){
-            newState = tristeState;
-        }
-        else if(Input.IsActionJustPressed("FelizState")){
-            newState = felizState;
-        }
-        else if(Input.IsActionJustPressed("MedoState")){
-            newState = medoState;
-        }
-        else if(Input.IsActionJustPressed("CoracaoState")){
-            newState = coracaoState;
-        }
+		if(Input.IsActionJustPressed("RaivaState")){
+			newState = raivaState;
+		}
+		else if(Input.IsActionJustPressed("TristeState")){
+			newState = tristeState;
+		}
+		else if(Input.IsActionJustPressed("FelizState")){
+			newState = felizState;
+		}
+		else if(Input.IsActionJustPressed("MedoState")){
+			newState = medoState;
+		}
+		else if(Input.IsActionJustPressed("CoracaoState")){
+			newState = coracaoState;
+		}
 
-        if(newState != currentState)
-        {
-            SwitchState(newState);
-        }
-    }   
+		if(newState != currentState)
+		{
+			SwitchState(newState);
+		}
+	}   
 
 	public void SwitchState(BaseState state)
 	{
+		if(canSwitchState){
+
+		canSwitchState = false;
+			
+		stateCooldown.Start();
+
 		// sai do estado atual
 		currentState.LeaveState(this);
 
@@ -67,6 +80,12 @@ public partial class StateManager : AnimatedSprite
 		currentState = state;
 
 		// entra no novo estado
-		currentState.EnterState(this, originalPosition);
+		currentState.EnterState(this);
+		}
+	}
+
+	private void StateCooldown_timeout()
+	{
+		canSwitchState = true;
 	}
 }

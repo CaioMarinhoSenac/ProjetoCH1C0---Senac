@@ -3,15 +3,10 @@ using System;
 
 public partial class TristeState : BaseState
 {
-    public override void EnterState(StateManager State, Vector2 originalPosition){
-        base.EnterState(State, originalPosition);
+    public override void EnterState(StateManager State){
+        base.EnterState(State);
 
         State.eyesAnimation.Visible = false;
-    }
-
-    public override void SearchDirection(Vector2 currentPosition)
-    {
-        return;
     }
 
     public override void LeaveState(StateManager State)
