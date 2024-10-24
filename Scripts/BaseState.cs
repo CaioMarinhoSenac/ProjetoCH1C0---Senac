@@ -13,17 +13,21 @@ public partial class BaseState : AnimatedSprite
 	{
 		StateManager = State;
 
-		SwitchFace();
+		SwitchStateAnimation();
 	}
 	public virtual void LeaveState(StateManager State)
 	{
 	}
 
-	public virtual void SwitchFace()
+	public virtual void SwitchStateAnimation()
 	{
 		if (this.GetType().Name != null)
 		{
-			animationsLib.PlayFrameAnimation(StateManager.faceAnimation, this.GetType().Name);
+			string animationName = this.GetType().Name;
+
+			animationsLib.PlayFrameAnimation(StateManager.faceAnimation, animationName);
+			animationsLib.PlayFrameAnimation(StateManager.eyesAnimation, animationName);
+			animationsLib.PlayFrameAnimation(StateManager.mouthAnimation, animationName);
 		}
 	}
 }

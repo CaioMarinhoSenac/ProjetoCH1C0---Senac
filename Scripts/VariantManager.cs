@@ -3,11 +3,11 @@ using System;
 
 public partial class VariantManager : AnimatedSprite
 {
-	public AnimatedSprite eyesAnimation, faceAnimation;
+	public AnimatedSprite eyesAnimation, faceAnimation, mouthAnimation;
 
-	Timer stateCooldown, directionCooldown;
+	Timer directionCooldown;
 
-	bool canSearchDirection = true, canSearchEyes = true;
+	bool canSearchDirection = true;
 
 	public StateManager stateManager;
 
@@ -17,9 +17,7 @@ public partial class VariantManager : AnimatedSprite
 
 	Tween tween;
 
-	string eyesName, variantName;
-
-	float moveSpeedEyes = 0.5f, moveSpeedFace = 0.5f; // Ajusta a velocidade que se move
+	float moveSpeedEyes = 0.5f, moveSpeedFace = 0.5f, moveSpeedMouth = 0.5f; // Ajusta a velocidade que se move
 
 	float moveDistanceEyes = 50.0f, moveDistanceFace = 25.0f; // Ajusta o quanto se move
 	
@@ -29,9 +27,7 @@ public partial class VariantManager : AnimatedSprite
 
 		stateManager = GetNode<StateManager>("../RostoSprite2D");
 		faceAnimation = stateManager.faceAnimation;
-
-		stateCooldown = GetNode<Timer>("../StateCooldown");
-		stateCooldown.Connect("timeout", this, "StateCooldown_timeout");
+		mouthAnimation = stateManager.mouthAnimation;
 
 		directionCooldown = GetNode<Timer>("../DirectionCooldown");
 		directionCooldown.Connect("timeout", this, "DirectionCooldown_timeout");
@@ -42,49 +38,7 @@ public partial class VariantManager : AnimatedSprite
 
 	public override void _Process(float delta)
 	{
-			SearchEyes();
-
-			SearchDirection();
-	}
-
-	public void SwitchEyes(string variantName)
-	{
-		if (variantName != null)
-		{
-			this.variantName = variantName;
-			animationsLib.PlayFrameAnimation(eyesAnimation, variantName);
-		}
-	}
-
-	public void SearchEyes()
-	{
-		if(canSearchEyes){
-		if (stateManager.currentState == stateManager.raivaState)
-		{
-			eyesName = "RaivaEyes";
-		}
-		else if (stateManager.currentState == stateManager.felizState)
-		{
-			eyesName = "FelizEyes";
-		}
-		else if (stateManager.currentState == stateManager.coracaoState)
-		{
-			eyesName = "CoracaoEyes";
-		}
-		else if (stateManager.currentState == stateManager.medoState)
-		{
-			eyesName = "MedoEyes";
-		}
-
-		if (eyesName != null && eyesName != variantName)
-		{
-			canSearchEyes = false;
-
-			stateCooldown.Start();
-			
-			SwitchEyes(eyesName);
-		}
-		}
+		SearchDirection();
 	}
 
 	public void SearchDirection()
@@ -92,6 +46,7 @@ public partial class VariantManager : AnimatedSprite
 		if(canSearchDirection) {
 		Vector2 targetPositionEyes = eyesAnimation.Position;
 		Vector2 targetPositionFace = faceAnimation.Position;
+		Vector2 targetPositionMouth = mouthAnimation.Position;
 
 		//  ESQUERDA
 		if (Input.IsActionJustPressed("Esquerda-cima"))
@@ -171,19 +126,18 @@ public partial class VariantManager : AnimatedSprite
 
 		if (targetPositionEyes != eyesAnimation.Position && targetPositionFace != faceAnimation.Position)
 		{
+			targetPositionMouth.x = targetPositionFace.x;
+			targetPositionMouth.y = targetPositionFace.y;
+
 			canSearchDirection = false;
 
 			directionCooldown.Start();
 			
 			animationsLib.MoveToDirection(eyesAnimation, targetPositionEyes, ref tween, moveSpeedEyes);
 			animationsLib.MoveToDirection(faceAnimation, targetPositionFace, ref tween, moveSpeedFace);
+			animationsLib.MoveToDirection(mouthAnimation, targetPositionMouth, ref tween, moveSpeedMouth);
 		}
 		}
-	}
-
-	private void StateCooldown_timeout()
-	{
-		canSearchEyes = true;
 	}
 	private void DirectionCooldown_timeout()
 	{

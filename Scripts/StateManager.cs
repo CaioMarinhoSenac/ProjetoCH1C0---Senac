@@ -5,6 +5,8 @@ public partial class StateManager : AnimatedSprite
 {
 	public AnimatedSprite faceAnimation;
 	public VariantManager eyesAnimation;
+
+	public AnimatedSprite mouthAnimation;
 	public BaseState currentState;
 
 	// INSTACIA AS CLASSES (ESTADOS)
@@ -13,6 +15,8 @@ public partial class StateManager : AnimatedSprite
 	public RaivaState raivaState = new RaivaState();
 	public CoracaoState coracaoState = new CoracaoState();
 	public FelizState felizState = new FelizState();
+
+	public DormindoState dormindoState = new DormindoState();
 
 	Vector2 originalPosition;
 
@@ -24,6 +28,7 @@ public partial class StateManager : AnimatedSprite
 	{
 		faceAnimation = this;
 		eyesAnimation = GetNode<VariantManager>("../OlhosSprite2D");
+		mouthAnimation = GetNode<AnimatedSprite>("../BocaSprite2D");
 
 		originalPosition = faceAnimation.Position;
 
@@ -58,6 +63,9 @@ public partial class StateManager : AnimatedSprite
 		else if(Input.IsActionJustPressed("CoracaoState")){
 			newState = coracaoState;
 		}
+		else if(Input.IsActionJustPressed("DormindoState")){
+			newState = dormindoState;
+		}
 
 		if(newState != currentState)
 		{
@@ -83,6 +91,8 @@ public partial class StateManager : AnimatedSprite
 		currentState.EnterState(this);
 		}
 	}
+
+	
 
 	private void StateCooldown_timeout()
 	{

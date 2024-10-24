@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OlhoSono.png-38f1675b84f4d91aaade3ee733503f91.stex"
+path="res://.import/BocaBabando.png-747a2c3ad0fa18a0e6a5db4fb34f3f5e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/REAÇÕES FINAIS (PARTICIONADAS)/DORMINDO/OlhoSono.png"
-dest_files=[ "res://.import/OlhoSono.png-38f1675b84f4d91aaade3ee733503f91.stex" ]
+source_file="res://Sprites/Reações Particionadas/DORMINDO/BocaBabando.png"
+dest_files=[ "res://.import/BocaBabando.png-747a2c3ad0fa18a0e6a5db4fb34f3f5e.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

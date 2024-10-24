@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://Sprites/Rostos/coração.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Rostos/Triste.png" type="Texture" id=2]
@@ -12,6 +12,9 @@
 [ext_resource path="res://Scripts/StateManager.cs" type="Script" id=10]
 [ext_resource path="res://Scripts/VariantManager.cs" type="Script" id=11]
 [ext_resource path="res://Scenes/CanvasScript.cs" type="Script" id=12]
+[ext_resource path="res://Sprites/Reações Particionadas/DORMINDO/BocaBabando.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Reações Particionadas/DORMINDO/OlhoSono.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Reações Particionadas/DORMINDO/ZZZ.png" type="Texture" id=15]
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
@@ -36,6 +39,18 @@ region = Rect2( 960, 0, 240, 135 )
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 1200, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=77]
+atlas = ExtResource( 15 )
+region = Rect2( 0, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 15 )
+region = Rect2( 240, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=79]
+atlas = ExtResource( 15 )
+region = Rect2( 480, 0, 240, 135 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
@@ -184,6 +199,11 @@ animations = [ {
 "name": "CoracaoState",
 "speed": 6.0
 }, {
+"frames": [ SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 78 ), SubResource( 77 ), SubResource( 77 ), SubResource( 77 ) ],
+"loop": true,
+"name": "DormindoState",
+"speed": 4.0
+}, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 11 ) ],
 "loop": false,
 "name": "FelizState",
@@ -192,7 +212,7 @@ animations = [ {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "MedoState",
-"speed": 7.0
+"speed": 5.0
 }, {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 33 ), SubResource( 32 ), SubResource( 31 ) ],
 "loop": false,
@@ -216,6 +236,10 @@ region = Rect2( 960, 0, 240, 135 )
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 9 )
 region = Rect2( 1200, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=80]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 240, 135 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 8 )
@@ -329,22 +353,85 @@ region = Rect2( 1680, 0, 240, 135 )
 animations = [ {
 "frames": [ SubResource( 44 ), SubResource( 48 ), SubResource( 49 ), SubResource( 48 ) ],
 "loop": true,
-"name": "CoracaoEyes",
+"name": "CoracaoState",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 80 ) ],
+"loop": false,
+"name": "DormindoState",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ), SubResource( 53 ) ],
 "loop": false,
-"name": "FelizEyes",
+"name": "FelizState",
 "speed": 6.0
 }, {
 "frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
-"loop": false,
-"name": "MedoEyes",
+"loop": true,
+"name": "MedoState",
 "speed": 45.0
 }, {
 "frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ) ],
 "loop": false,
-"name": "RaivaEyes",
+"name": "RaivaState",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "TristeState",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 13 )
+region = Rect2( 240, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 13 )
+region = Rect2( 480, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 13 )
+region = Rect2( 720, 0, 240, 135 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 13 )
+region = Rect2( 960, 0, 240, 135 )
+
+[sub_resource type="SpriteFrames" id=86]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "CoracaoState",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 84 ), SubResource( 83 ), SubResource( 82 ) ],
+"loop": true,
+"name": "DormindoState",
+"speed": 3.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "FelizState",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "MedoState",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "RaivaState",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "TristeState",
 "speed": 5.0
 } ]
 
@@ -373,8 +460,8 @@ margin_bottom = 300.0
 position = Vector2( 507.2, 327.688 )
 scale = Vector2( 4.025, 4.025 )
 frames = SubResource( 1 )
-animation = "CoracaoState"
-frame = 6
+animation = "DormindoState"
+frame = 2
 playing = true
 script = ExtResource( 10 )
 
@@ -382,8 +469,14 @@ script = ExtResource( 10 )
 position = Vector2( 507.2, 327.688 )
 scale = Vector2( 4.025, 4.025 )
 frames = SubResource( 2 )
-animation = "FelizEyes"
+animation = "TristeState"
 script = ExtResource( 11 )
+
+[node name="BocaSprite2D" type="AnimatedSprite" parent="CanvasLayer/HBoxContainer"]
+position = Vector2( 507.2, 327.688 )
+scale = Vector2( 4.025, 4.025 )
+frames = SubResource( 86 )
+animation = "RaivaState"
 
 [node name="StateCooldown" type="Timer" parent="CanvasLayer/HBoxContainer"]
 wait_time = 2.5
