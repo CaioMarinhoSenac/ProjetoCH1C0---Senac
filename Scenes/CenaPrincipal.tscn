@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://cmlirwf2oh2g"]
+[gd_scene load_steps=105 format=3 uid="uid://cmlirwf2oh2g"]
 
 [ext_resource type="Texture2D" uid="uid://b4526m6sqv322" path="res://Sprites/Coração/coração.png" id="1_e5tj5"]
 [ext_resource type="Script" path="res://Scripts/CanvasScript.cs" id="1_wpjin"]
@@ -756,6 +756,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_07god"]
+resource_name = "Breathing"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m1djf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kjcqx"]
+_data = {
+"Breathing": SubResource("Animation_07god"),
+"RESET": SubResource("Animation_m1djf")
+}
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -786,20 +823,21 @@ eyesAnimation = NodePath("../OlhosSprite2D")
 mouthAnimation = NodePath("../BocaSprite2D")
 stateCooldown = NodePath("../StateCooldown")
 
-[node name="OlhosSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("directionCooldown", "stateManager")]
+[node name="OlhosSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("directionCooldown", "stateManager", "animationPlayer")]
 position = Vector2(575.76, 331.865)
 scale = Vector2(4.798, 4.798)
 sprite_frames = SubResource("2")
-animation = &"TristeState"
+animation = &"FelizState"
 script = ExtResource("3_35qcp")
 directionCooldown = NodePath("../DirectionCooldown")
 stateManager = NodePath("../RostoSprite2D")
+animationPlayer = NodePath("../AnimationPlayer")
 
 [node name="BocaSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer"]
 position = Vector2(575.76, 331.865)
 scale = Vector2(4.798, 4.798)
 sprite_frames = SubResource("86")
-animation = &"DormindoState"
+animation = &"FelizState"
 
 [node name="StateCooldown" type="Timer" parent="CanvasLayer/HBoxContainer"]
 wait_time = 2.5
@@ -808,3 +846,9 @@ one_shot = true
 [node name="DirectionCooldown" type="Timer" parent="CanvasLayer/HBoxContainer"]
 wait_time = 1.75
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/HBoxContainer"]
+root_node = NodePath("../RostoSprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_kjcqx")
+}

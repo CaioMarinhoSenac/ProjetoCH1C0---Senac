@@ -4,6 +4,8 @@ using System;
 public partial class AnimationsLib : Node
 {
 
+    private Tween activeBreathingTween;
+
     public void MoveToDirection(AnimatedSprite2D target, Vector2 targetPosition, float moveSpeed)
     {
         MoveTo(target, targetPosition, moveSpeed);
@@ -22,5 +24,10 @@ public partial class AnimationsLib : Node
         Tween tween = target.CreateTween();
 
         tween.TweenProperty(target, "position", targetPosition, moveSpeed);
+    }
+
+    public void Breathing(AnimationPlayer target)
+    {
+        target.Play("Breathing");
     }
 }

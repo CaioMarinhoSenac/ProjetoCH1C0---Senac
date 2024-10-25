@@ -11,6 +11,8 @@ public partial class VariantManager : AnimatedSprite2D
 
 	[Export] public StateManager stateManager;
 
+	[Export] public AnimationPlayer animationPlayer;
+
 	AnimationsLib animationsLib = new AnimationsLib();
 
 	Vector2 originalPositionEyes, originalPositionFace;
