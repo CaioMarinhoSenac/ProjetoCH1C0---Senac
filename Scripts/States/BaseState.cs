@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class BaseState : AnimatedSprite
+public partial class BaseState : AnimatedSprite2D
 {
 	protected AnimationsLib animationsLib = new AnimationsLib();
 

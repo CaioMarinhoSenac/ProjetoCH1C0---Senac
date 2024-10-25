@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kmdsv65r8f2h"
-path="res://.godot/imported/coração.png-94c16247741b3320732db6186241430f.ctex"
+uid="uid://d06yfnaq1ch7"
+path="res://.godot/imported/Medo.png-a20d24c70607c6eede67a4bc87ddda52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/coração.png"
-dest_files=["res://.godot/imported/coração.png-94c16247741b3320732db6186241430f.ctex"]
+source_file="res://Sprites/Medo/Medo.png"
+dest_files=["res://.godot/imported/Medo.png-a20d24c70607c6eede67a4bc87ddda52.ctex"]
 
 [params]
 

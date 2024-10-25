@@ -1,6 +1,6 @@
 using Godot;
 using System;
 
-public class DormindoState : BaseState
+public partial class DormindoState : BaseState
 {
 }

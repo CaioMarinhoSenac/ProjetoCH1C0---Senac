@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c53nqk732763y"
-path="res://.godot/imported/Feliz.png-1611308a3f36b45dbe81e3c94761a3f0.ctex"
+uid="uid://dtx4duf7kxdkk"
+path="res://.godot/imported/FelizOlhos.png-0c76ec0ae5c8fa061e00760b9db31c53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Feliz.png"
-dest_files=["res://.godot/imported/Feliz.png-1611308a3f36b45dbe81e3c94761a3f0.ctex"]
+source_file="res://Sprites/Feliz/FelizOlhos.png"
+dest_files=["res://.godot/imported/FelizOlhos.png-0c76ec0ae5c8fa061e00760b9db31c53.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2d5hptnw743"
-path="res://.godot/imported/Raiva.png-c8aa2777815c92879ff8f54c4e0c83f6.ctex"
+uid="uid://c0atyjjkgp8ni"
+path="res://.godot/imported/RaivaOlhos.png-9240bf81be1a0fd2b30d9b8db78ed815.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Raiva.png"
-dest_files=["res://.godot/imported/Raiva.png-c8aa2777815c92879ff8f54c4e0c83f6.ctex"]
+source_file="res://Sprites/Raiva/RaivaOlhos.png"
+dest_files=["res://.godot/imported/RaivaOlhos.png-9240bf81be1a0fd2b30d9b8db78ed815.ctex"]
 
 [params]
 

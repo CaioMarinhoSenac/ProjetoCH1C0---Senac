@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwmpmwcuocaxj"
-path="res://.godot/imported/Medo.png-d8e07af918ad3fcb7c8aa7c601bf5e04.ctex"
+uid="uid://f6id1r1mdq8j"
+path="res://.godot/imported/Raiva.png-cb983ef4068375d5d4f194e9efc3937a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Medo.png"
-dest_files=["res://.godot/imported/Medo.png-d8e07af918ad3fcb7c8aa7c601bf5e04.ctex"]
+source_file="res://Sprites/Raiva/Raiva.png"
+dest_files=["res://.godot/imported/Raiva.png-cb983ef4068375d5d4f194e9efc3937a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iprcl3bwwb1j"
-path="res://.godot/imported/Triste.png-9def75ed0f78ba4a91d7564cfd1fdd4a.ctex"
+uid="uid://cwvixyononwny"
+path="res://.godot/imported/BocaBabando.png-8e1953cec28a4b10b15697f1a9acb990.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Triste.png"
-dest_files=["res://.godot/imported/Triste.png-9def75ed0f78ba4a91d7564cfd1fdd4a.ctex"]
+source_file="res://Sprites/Dormindo/BocaBabando.png"
+dest_files=["res://.godot/imported/BocaBabando.png-8e1953cec28a4b10b15697f1a9acb990.ctex"]
 
 [params]
 
