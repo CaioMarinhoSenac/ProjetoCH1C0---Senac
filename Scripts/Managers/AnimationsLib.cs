@@ -3,9 +3,6 @@ using System;
 
 public partial class AnimationsLib : Node
 {
-
-    private Tween activeBreathingTween;
-
     public void MoveToDirection(AnimatedSprite2D target, Vector2 targetPosition, float moveSpeed)
     {
         MoveTo(target, targetPosition, moveSpeed);

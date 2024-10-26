@@ -23,6 +23,8 @@ public partial class StateManager : AnimatedSprite2D
 
 	[Export] Timer stateCooldown;
 
+	[Export] public AnimationPlayer animationPlayer;
+
 	public override void _Ready()
 	{
 		faceAnimation = this;

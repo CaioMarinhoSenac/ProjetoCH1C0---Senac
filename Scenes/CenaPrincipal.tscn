@@ -805,15 +805,22 @@ grow_vertical = 2
 script = ExtResource("1_wpjin")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+alignment = 1
 
-[node name="RostoSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "stateCooldown")]
+[node name="RostoSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "stateCooldown", "animationPlayer")]
 position = Vector2(575.76, 331.865)
 scale = Vector2(4.79768, 4.79769)
 sprite_frames = SubResource("1")
@@ -822,8 +829,9 @@ script = ExtResource("2_82ctf")
 eyesAnimation = NodePath("../OlhosSprite2D")
 mouthAnimation = NodePath("../BocaSprite2D")
 stateCooldown = NodePath("../StateCooldown")
+animationPlayer = NodePath("../AnimationPlayer")
 
-[node name="OlhosSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("directionCooldown", "stateManager", "animationPlayer")]
+[node name="OlhosSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("directionCooldown", "stateManager")]
 position = Vector2(575.76, 331.865)
 scale = Vector2(4.798, 4.798)
 sprite_frames = SubResource("2")
@@ -831,7 +839,6 @@ animation = &"FelizState"
 script = ExtResource("3_35qcp")
 directionCooldown = NodePath("../DirectionCooldown")
 stateManager = NodePath("../RostoSprite2D")
-animationPlayer = NodePath("../AnimationPlayer")
 
 [node name="BocaSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer"]
 position = Vector2(575.76, 331.865)

@@ -11,7 +11,7 @@ public partial class VariantManager : AnimatedSprite2D
 
 	[Export] public StateManager stateManager;
 
-	[Export] public AnimationPlayer animationPlayer;
+	private AnimationPlayer animationPlayer;
 
 	AnimationsLib animationsLib = new AnimationsLib();
 
@@ -34,6 +34,10 @@ public partial class VariantManager : AnimatedSprite2D
 
 		originalPositionEyes = eyesAnimation.Position;
 		originalPositionFace = faceAnimation.Position;
+
+		animationPlayer = stateManager.animationPlayer;
+
+		animationPlayer.Play("Breathing");
 	}
 
 	public override void _Process(double delta)

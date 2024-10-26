@@ -9,15 +9,11 @@ public partial class BaseState : AnimatedSprite2D
 
 	protected StateManager StateManager;
 
-	protected AnimationPlayer animationPlayer;
-
 	public virtual void EnterState(StateManager State)
 	{
 		StateManager = State;
 
 		SwitchStateAnimation();
-
-		animationsLib.Breathing(animationPlayer);
 	}
 	public virtual void LeaveState(StateManager State)
 	{
