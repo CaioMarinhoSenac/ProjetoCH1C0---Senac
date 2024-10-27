@@ -1,8 +1,9 @@
-[gd_scene load_steps=105 format=3 uid="uid://cmlirwf2oh2g"]
+[gd_scene load_steps=106 format=3 uid="uid://cmlirwf2oh2g"]
 
 [ext_resource type="Texture2D" uid="uid://b4526m6sqv322" path="res://Sprites/Coração/coração.png" id="1_e5tj5"]
 [ext_resource type="Script" path="res://Scripts/CanvasScript.cs" id="1_wpjin"]
 [ext_resource type="Script" path="res://Scripts/Managers/StateManager.cs" id="2_82ctf"]
+[ext_resource type="Gradient" uid="uid://yol7tq4mdvr7" path="res://Sprites/winter.tres" id="2_xowkv"]
 [ext_resource type="Script" path="res://Scripts/Managers/VariantManager.cs" id="3_35qcp"]
 [ext_resource type="Texture2D" uid="uid://rvlfcmbvqv0u" path="res://Sprites/Dormindo/ZZZ.png" id="3_vxvm2"]
 [ext_resource type="Texture2D" uid="uid://dnokt8isf2aq3" path="res://Sprites/Feliz/Feliz.png" id="4_flf1q"]
@@ -801,8 +802,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("canvasModulate")]
 script = ExtResource("1_wpjin")
+canvasModulate = NodePath("CanvasModulate")
+gradient = ExtResource("2_xowkv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
@@ -859,3 +862,5 @@ root_node = NodePath("../RostoSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_kjcqx")
 }
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
