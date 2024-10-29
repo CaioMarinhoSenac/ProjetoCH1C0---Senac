@@ -804,7 +804,7 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("canvasModulate")]
 script = ExtResource("1_wpjin")
-canvasModulate = NodePath("CanvasModulate")
+canvasModulate = NodePath("CicloDia")
 gradient = ExtResource("2_xowkv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
@@ -863,4 +863,6 @@ libraries = {
 "": SubResource("AnimationLibrary_kjcqx")
 }
 
-[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+[node name="CicloDia" type="CanvasModulate" parent="CanvasLayer"]
+
+[node name="Audios" type="Node" parent="CanvasLayer"]
