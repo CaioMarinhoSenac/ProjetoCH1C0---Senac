@@ -804,8 +804,8 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("canvasModulate")]
 script = ExtResource("1_wpjin")
-canvasModulate = NodePath("CicloDia")
 gradient = ExtResource("2_xowkv")
+canvasModulate = NodePath("CicloDia")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
