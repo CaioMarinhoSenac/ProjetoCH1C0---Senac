@@ -27,4 +27,11 @@ public partial class AnimationsLib : Node
     {
         target.Play("Breathing");
     }
+
+    public void SwitchColor(Sprite2D target, Color targetColor, float speed)
+    {
+        Tween tween = target.CreateTween();
+
+        tween.TweenProperty(target, "modulate", targetColor, speed);
+    }
 }

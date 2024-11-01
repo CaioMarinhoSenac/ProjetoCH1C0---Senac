@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0tuvi8nmvsm0"
-path="res://.godot/imported/Blank.png-f865fcc161bd12a762d6e2d6efef47d9.ctex"
+uid="uid://cgab54vy4p4ww"
+path="res://.godot/imported/Circuito.png-908c64e3fbbb05e8115b9c883619dc51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Blank.png"
-dest_files=["res://.godot/imported/Blank.png-f865fcc161bd12a762d6e2d6efef47d9.ctex"]
+source_file="res://Sprites/Background/Circuito.png"
+dest_files=["res://.godot/imported/Circuito.png-908c64e3fbbb05e8115b9c883619dc51.ctex"]
 
 [params]
 

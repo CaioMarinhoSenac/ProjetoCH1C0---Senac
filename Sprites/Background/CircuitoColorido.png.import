@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgab54vy4p4ww"
-path="res://.godot/imported/Circuito.png-b835856121c08fb6bf37ca8ac82fb224.ctex"
+uid="uid://032al6s8eada"
+path="res://.godot/imported/CircuitoColorido.png-f09f13cfebea4448ed47d64c07c70a62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Circuito.png"
-dest_files=["res://.godot/imported/Circuito.png-b835856121c08fb6bf37ca8ac82fb224.ctex"]
+source_file="res://Sprites/Background/CircuitoColorido.png"
+dest_files=["res://.godot/imported/CircuitoColorido.png-f09f13cfebea4448ed47d64c07c70a62.ctex"]
 
 [params]
 

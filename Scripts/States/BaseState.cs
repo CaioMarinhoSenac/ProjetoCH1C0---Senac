@@ -9,11 +9,15 @@ public partial class BaseState : AnimatedSprite2D
 
 	protected StateManager StateManager;
 
+	protected Color stateColor;
+
 	public virtual void EnterState(StateManager State)
 	{
 		StateManager = State;
 
 		SwitchStateAnimation();
+
+		SwitchCircuitColor(stateColor);
 	}
 	public virtual void LeaveState(StateManager State)
 	{
@@ -29,5 +33,10 @@ public partial class BaseState : AnimatedSprite2D
 			animationsLib.PlayFrameAnimation(StateManager.eyesAnimation, animationName);
 			animationsLib.PlayFrameAnimation(StateManager.mouthAnimation, animationName);
 		}
+	}
+
+	public virtual void SwitchCircuitColor(Color targetColor)
+	{
+		animationsLib.SwitchColor(StateManager.CircuitColor, stateColor, 1.0f);
 	}
 }

@@ -1,9 +1,10 @@
-[gd_scene load_steps=106 format=3 uid="uid://cmlirwf2oh2g"]
+[gd_scene load_steps=109 format=3 uid="uid://cmlirwf2oh2g"]
 
+[ext_resource type="Texture2D" uid="uid://bclpjjdnau22v" path="res://Sprites/Background/BackgroundBaseColor.png" id="1_bm6eg"]
 [ext_resource type="Texture2D" uid="uid://b4526m6sqv322" path="res://Sprites/Coração/coração.png" id="1_e5tj5"]
 [ext_resource type="Script" path="res://Scripts/CanvasScript.cs" id="1_wpjin"]
 [ext_resource type="Script" path="res://Scripts/Managers/StateManager.cs" id="2_82ctf"]
-[ext_resource type="Gradient" uid="uid://yol7tq4mdvr7" path="res://Sprites/winter.tres" id="2_xowkv"]
+[ext_resource type="Gradient" uid="uid://dkj5gf2nlgw7v" path="res://Sprites/winter.tres" id="2_xowkv"]
 [ext_resource type="Script" path="res://Scripts/Managers/VariantManager.cs" id="3_35qcp"]
 [ext_resource type="Texture2D" uid="uid://rvlfcmbvqv0u" path="res://Sprites/Dormindo/ZZZ.png" id="3_vxvm2"]
 [ext_resource type="Texture2D" uid="uid://dnokt8isf2aq3" path="res://Sprites/Feliz/Feliz.png" id="4_flf1q"]
@@ -15,8 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://dtx4duf7kxdkk" path="res://Sprites/Feliz/FelizOlhos.png" id="11_gm4cg"]
 [ext_resource type="Texture2D" uid="uid://dbyho0fvu402w" path="res://Sprites/Medo/MedoOlhos.png" id="12_qudl5"]
 [ext_resource type="Texture2D" uid="uid://c0atyjjkgp8ni" path="res://Sprites/Raiva/RaivaOlhos.png" id="13_olfer"]
-[ext_resource type="Texture2D" uid="uid://c0tuvi8nmvsm0" path="res://Sprites/Blank.png" id="14_s6wbu"]
+[ext_resource type="Texture2D" uid="uid://c0tuvi8nmvsm0" path="res://Sprites/Background/Blank.png" id="14_s6wbu"]
 [ext_resource type="Texture2D" uid="uid://cwvixyononwny" path="res://Sprites/Dormindo/BocaBabando.png" id="15_j3jr8"]
+[ext_resource type="Texture2D" uid="uid://cgab54vy4p4ww" path="res://Sprites/Background/Circuito.png" id="18_014c1"]
+[ext_resource type="Texture2D" uid="uid://032al6s8eada" path="res://Sprites/Background/CircuitoColorido.png" id="19_wjq0i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gn23v"]
 atlas = ExtResource("1_e5tj5")
@@ -802,12 +805,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("canvasModulate")]
+[node name="Background" type="CanvasLayer" parent="." node_paths=PackedStringArray("canvasModulate")]
 script = ExtResource("1_wpjin")
-gradient = ExtResource("2_xowkv")
 canvasModulate = NodePath("CicloDia")
+gradient = ExtResource("2_xowkv")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+[node name="BackgroundBaseColor" type="Sprite2D" parent="Background"]
+modulate = Color(0.0823529, 0.643137, 0, 1)
+position = Vector2(576, 320)
+scale = Vector2(4.85926, 4.85926)
+texture = ExtResource("1_bm6eg")
+
+[node name="BackgroundBox" type="HBoxContainer" parent="Background"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -823,46 +832,77 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="RostoSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "stateCooldown", "animationPlayer")]
+[node name="Circuito" type="Sprite2D" parent="Background/BackgroundBox"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(575.76, 323.865)
+scale = Vector2(4.798, 4.798)
+texture = ExtResource("18_014c1")
+
+[node name="CircuitoColor" type="Sprite2D" parent="Background/BackgroundBox"]
+modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(575.76, 323.865)
+scale = Vector2(4.798, 4.798)
+texture = ExtResource("19_wjq0i")
+
+[node name="CicloDia" type="CanvasModulate" parent="Background"]
+
+[node name="Foreground" type="CanvasLayer" parent="."]
+
+[node name="ForegorundBox" type="HBoxContainer" parent="Foreground"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "stateCooldown", "animationPlayer", "CircuitColor")]
 position = Vector2(575.76, 331.865)
-scale = Vector2(4.79768, 4.79769)
+scale = Vector2(4.338, 4.338)
 sprite_frames = SubResource("1")
 animation = &"FelizState"
 script = ExtResource("2_82ctf")
 eyesAnimation = NodePath("../OlhosSprite2D")
 mouthAnimation = NodePath("../BocaSprite2D")
-stateCooldown = NodePath("../StateCooldown")
-animationPlayer = NodePath("../AnimationPlayer")
+stateCooldown = NodePath("../../../StateCooldown")
+animationPlayer = NodePath("../../AnimationPlayer")
+CircuitColor = NodePath("../../../Background/BackgroundBox/CircuitoColor")
 
-[node name="OlhosSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer" node_paths=PackedStringArray("directionCooldown", "stateManager")]
+[node name="OlhosSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("directionCooldown", "stateManager")]
 position = Vector2(575.76, 331.865)
-scale = Vector2(4.798, 4.798)
+scale = Vector2(4.338, 4.338)
 sprite_frames = SubResource("2")
 animation = &"FelizState"
 script = ExtResource("3_35qcp")
-directionCooldown = NodePath("../DirectionCooldown")
+directionCooldown = NodePath("../../../DirectionCooldown")
 stateManager = NodePath("../RostoSprite2D")
 
-[node name="BocaSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/HBoxContainer"]
+[node name="BocaSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox"]
 position = Vector2(575.76, 331.865)
-scale = Vector2(4.798, 4.798)
+scale = Vector2(4.338, 4.338)
 sprite_frames = SubResource("86")
 animation = &"FelizState"
 
-[node name="StateCooldown" type="Timer" parent="CanvasLayer/HBoxContainer"]
-wait_time = 2.5
-one_shot = true
-
-[node name="DirectionCooldown" type="Timer" parent="CanvasLayer/HBoxContainer"]
-wait_time = 1.75
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/HBoxContainer"]
-root_node = NodePath("../RostoSprite2D")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Foreground"]
+root_node = NodePath("../ForegorundBox/RostoSprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_kjcqx")
 }
 
-[node name="CicloDia" type="CanvasModulate" parent="CanvasLayer"]
+[node name="StateCooldown" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
 
-[node name="Audios" type="Node" parent="CanvasLayer"]
+[node name="DirectionCooldown" type="Timer" parent="."]
+wait_time = 1.75
+one_shot = true
+
+[node name="Audios" type="Node" parent="."]
