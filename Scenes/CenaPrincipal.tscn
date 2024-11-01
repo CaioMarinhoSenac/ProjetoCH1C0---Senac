@@ -762,6 +762,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_07god"]
 resource_name = "Breathing"
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -770,7 +771,7 @@ tracks/0/path = NodePath("..:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
+"times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -15), Vector2(0, 0)]
@@ -866,7 +867,7 @@ alignment = 1
 
 [node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "stateCooldown", "animationPlayer", "CircuitColor")]
 position = Vector2(575.76, 331.865)
-scale = Vector2(4.338, 4.338)
+scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("1")
 animation = &"FelizState"
 script = ExtResource("2_82ctf")
@@ -878,7 +879,7 @@ CircuitColor = NodePath("../../../Background/BackgroundBox/CircuitoColor")
 
 [node name="OlhosSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("directionCooldown", "stateManager")]
 position = Vector2(575.76, 331.865)
-scale = Vector2(4.338, 4.338)
+scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("2")
 animation = &"FelizState"
 script = ExtResource("3_35qcp")
@@ -887,7 +888,7 @@ stateManager = NodePath("../RostoSprite2D")
 
 [node name="BocaSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox"]
 position = Vector2(575.76, 331.865)
-scale = Vector2(4.338, 4.338)
+scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("86")
 animation = &"FelizState"
 
