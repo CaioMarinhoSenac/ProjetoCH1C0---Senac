@@ -14,8 +14,12 @@ public partial class StateManager : AnimatedSprite2D
 	public RaivaState raivaState = new RaivaState();
 	public CoracaoState coracaoState = new CoracaoState();
 	public FelizState felizState = new FelizState();
-
 	public DormindoState dormindoState = new DormindoState();
+	public InstagramavelState instagramavelState = new InstagramavelState();
+	public BobeiraState bobeiraState= new BobeiraState();
+	public AnsiedadeState ansiedadeState= new AnsiedadeState();
+	public PiscandoState piscandoState= new PiscandoState();
+	public ThugLifeState thugLifeState= new ThugLifeState();
 
 	Vector2 originalPosition;
 

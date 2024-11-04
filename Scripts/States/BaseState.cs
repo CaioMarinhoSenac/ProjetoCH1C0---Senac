@@ -5,8 +5,6 @@ public partial class BaseState : AnimatedSprite2D
 {
 	protected AnimationsLib animationsLib = new AnimationsLib();
 
-	protected Tween tween;
-
 	protected StateManager StateManager;
 
 	protected Color stateColor;
