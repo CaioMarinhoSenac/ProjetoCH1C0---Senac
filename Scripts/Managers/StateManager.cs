@@ -115,12 +115,12 @@ public partial class StateManager : AnimatedSprite2D
 	{
 		if (canSwitchState)
 		{
+			// sai do estado atual
+			currentState.LeaveState(this);
+			
 			canSwitchState = false;
 
 			stateCooldown.Start();
-
-			// sai do estado atual
-			currentState.LeaveState(this);
 
 			// muda o estado atual
 			currentState = state;
