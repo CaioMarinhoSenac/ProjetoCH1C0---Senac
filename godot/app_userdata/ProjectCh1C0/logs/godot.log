@@ -1,0 +1,12 @@
+Godot Engine v4.3.stable.mono.official.77dcf97d8 - https://godotengine.org
+USER ERROR: X11 Display is not available
+   at: DisplayServerX11 (platform/linuxbsd/x11/display_server_x11.cpp:5972)
+USER ERROR: Can't connect to a Wayland display.
+   at: init (platform/linuxbsd/wayland/wayland_thread.cpp:3690)
+USER ERROR: Could not initialize the Wayland thread.
+   at: DisplayServerWayland (platform/linuxbsd/wayland/display_server_wayland.cpp:1337)
+USER ERROR: Can't create the Wayland display server.
+   at: create_func (platform/linuxbsd/wayland/display_server_wayland.cpp:1311)
+USER ERROR: Unable to create DisplayServer, all display drivers failed.
+Use "--headless" command line argument to run the engine in headless mode if this is desired (e.g. for continuous integration).
+   at: setup2 (main/main.cpp:2765)

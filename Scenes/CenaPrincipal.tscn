@@ -1169,9 +1169,9 @@ animation = &"BobeiraState"
 script = ExtResource("2_82ctf")
 eyesAnimation = NodePath("../OlhosSprite2D")
 mouthAnimation = NodePath("../BocaSprite2D")
-tristeTimer = NodePath("../../../TristeTimer")
-dormindoTimer = NodePath("../../../DormindoTimer")
-stateCooldown = NodePath("../../../StateCooldown")
+tristeTimer = NodePath("../../../Timers/TristeTimer")
+dormindoTimer = NodePath("../../../Timers/DormindoTimer")
+stateCooldown = NodePath("../../../Timers/StateCooldown")
 animationPlayer = NodePath("../../AnimationPlayer")
 CircuitColor = NodePath("../../../Background/BackgroundBox/CircuitoColor")
 
@@ -1181,7 +1181,7 @@ scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("2")
 animation = &"BobeiraState"
 script = ExtResource("3_35qcp")
-directionCooldown = NodePath("../../../DirectionCooldown")
+directionCooldown = NodePath("../../../Timers/DirectionCooldown")
 stateManager = NodePath("../RostoSprite2D")
 
 [node name="BocaSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox"]
@@ -1198,18 +1198,20 @@ libraries = {
 
 [node name="Audios" type="Node" parent="."]
 
-[node name="StateCooldown" type="Timer" parent="."]
+[node name="Timers" type="Node" parent="."]
+
+[node name="StateCooldown" type="Timer" parent="Timers"]
 wait_time = 2.5
 one_shot = true
 
-[node name="DirectionCooldown" type="Timer" parent="."]
+[node name="DirectionCooldown" type="Timer" parent="Timers"]
 wait_time = 1.75
 one_shot = true
 
-[node name="TristeTimer" type="Timer" parent="."]
-wait_time = 300.0
+[node name="TristeTimer" type="Timer" parent="Timers"]
+wait_time = 60.0
 one_shot = true
 
-[node name="DormindoTimer" type="Timer" parent="."]
-wait_time = 600.0
+[node name="DormindoTimer" type="Timer" parent="Timers"]
+wait_time = 120.0
 one_shot = true
