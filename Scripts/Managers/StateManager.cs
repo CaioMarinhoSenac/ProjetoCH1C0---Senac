@@ -105,9 +105,16 @@ public partial class StateManager : AnimatedSprite2D
 
 		if (newState != currentState)
 		{
+			if(currentState == dormindoState)
+			{
+				SwitchState(ansiedadeState);
+			}
+			else
+			{
+				SwitchState(newState);
+			}
+			
 			ResetTimers();
-
-			SwitchState(newState);
 		}
 	}
 
