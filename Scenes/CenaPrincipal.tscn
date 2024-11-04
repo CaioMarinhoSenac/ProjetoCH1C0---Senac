@@ -1108,7 +1108,7 @@ canvasModulate = NodePath("CicloDia")
 gradient = ExtResource("2_xowkv")
 
 [node name="BackgroundBaseColor" type="Sprite2D" parent="Background"]
-modulate = Color(0.0823529, 0.643137, 0, 1)
+modulate = Color(0.0823529, 0.478431, 0, 1)
 position = Vector2(576, 320)
 scale = Vector2(4.85926, 4.85926)
 texture = ExtResource("1_bm6eg")
@@ -1161,7 +1161,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "stateCooldown", "animationPlayer", "CircuitColor")]
+[node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "tristeTimer", "dormindoTimer", "stateCooldown", "animationPlayer", "CircuitColor")]
 position = Vector2(575.76, 331.865)
 scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("1")
@@ -1169,6 +1169,8 @@ animation = &"BobeiraState"
 script = ExtResource("2_82ctf")
 eyesAnimation = NodePath("../OlhosSprite2D")
 mouthAnimation = NodePath("../BocaSprite2D")
+tristeTimer = NodePath("../../../TristeTimer")
+dormindoTimer = NodePath("../../../DormindoTimer")
 stateCooldown = NodePath("../../../StateCooldown")
 animationPlayer = NodePath("../../AnimationPlayer")
 CircuitColor = NodePath("../../../Background/BackgroundBox/CircuitoColor")
@@ -1194,6 +1196,8 @@ libraries = {
 "": SubResource("AnimationLibrary_kjcqx")
 }
 
+[node name="Audios" type="Node" parent="."]
+
 [node name="StateCooldown" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
@@ -1202,4 +1206,10 @@ one_shot = true
 wait_time = 1.75
 one_shot = true
 
-[node name="Audios" type="Node" parent="."]
+[node name="TristeTimer" type="Timer" parent="."]
+wait_time = 300.0
+one_shot = true
+
+[node name="DormindoTimer" type="Timer" parent="."]
+wait_time = 600.0
+one_shot = true

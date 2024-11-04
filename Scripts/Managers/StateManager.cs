@@ -6,6 +6,9 @@ public partial class StateManager : AnimatedSprite2D
 	public AnimatedSprite2D faceAnimation;
 	[Export] public VariantManager eyesAnimation;
 	[Export] public AnimatedSprite2D mouthAnimation;
+	[Export] public Timer tristeTimer;
+	[Export] public Timer dormindoTimer;
+
 	public BaseState currentState;
 
 	// INSTACIA AS CLASSES (ESTADOS)
@@ -41,6 +44,12 @@ public partial class StateManager : AnimatedSprite2D
 
 		currentState = felizState;
 		currentState.EnterState(this);
+
+		tristeTimer.Start();
+		dormindoTimer.Start();
+
+		tristeTimer.Timeout += TristeTimer_timeout;
+		dormindoTimer.Timeout += DormindoTimer_timeout;
 	}
 
 	public override void _Process(double delta)
@@ -64,11 +73,7 @@ public partial class StateManager : AnimatedSprite2D
 		}
 		else
 		{
-			if (Input.IsActionJustPressed("TristeState"))
-			{
-				newState = tristeState;
-			}
-			else if (Input.IsActionJustPressed("FelizState"))
+			if (Input.IsActionJustPressed("FelizState"))
 			{
 				newState = felizState;
 			}
@@ -79,10 +84,6 @@ public partial class StateManager : AnimatedSprite2D
 			else if (Input.IsActionJustPressed("CoracaoState"))
 			{
 				newState = coracaoState;
-			}
-			else if (Input.IsActionJustPressed("DormindoState"))
-			{
-				newState = dormindoState;
 			}
 			else if (Input.IsActionJustPressed("ThugLifeState"))
 			{
@@ -104,6 +105,8 @@ public partial class StateManager : AnimatedSprite2D
 
 		if (newState != currentState)
 		{
+			ResetTimers();
+
 			SwitchState(newState);
 		}
 	}
@@ -112,7 +115,6 @@ public partial class StateManager : AnimatedSprite2D
 	{
 		if (canSwitchState)
 		{
-
 			canSwitchState = false;
 
 			stateCooldown.Start();
@@ -133,5 +135,24 @@ public partial class StateManager : AnimatedSprite2D
 		canSwitchState = true;
 
 		stateCooldown.WaitTime = 2.5f;
+	}
+
+	private void TristeTimer_timeout()
+	{
+		SwitchState(tristeState);
+	}
+
+	private void DormindoTimer_timeout()
+	{
+		SwitchState(dormindoState);
+	}
+
+	private void ResetTimers()
+	{
+		tristeTimer.Stop();
+		dormindoTimer.Stop();
+
+		tristeTimer.Start();
+		dormindoTimer.Start();
 	}
 }
