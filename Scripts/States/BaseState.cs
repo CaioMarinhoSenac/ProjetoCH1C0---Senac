@@ -9,6 +9,8 @@ public partial class BaseState : AnimatedSprite2D
 
 	protected Color stateColor;
 
+	protected bool loopColor = false;
+
 	public virtual void EnterState(StateManager State)
 	{
 		StateManager = State;
@@ -35,6 +37,6 @@ public partial class BaseState : AnimatedSprite2D
 
 	public virtual void SwitchCircuitColor(Color targetColor)
 	{
-		animationsLib.SwitchColor(StateManager.CircuitColor, stateColor, 1.0f);
+		animationsLib.SwitchColor(StateManager.CircuitColor, stateColor, 1.0f, loopColor);
 	}
 }
