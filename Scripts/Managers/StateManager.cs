@@ -16,10 +16,10 @@ public partial class StateManager : AnimatedSprite2D
 	public FelizState felizState = new FelizState();
 	public DormindoState dormindoState = new DormindoState();
 	public InstagramavelState instagramavelState = new InstagramavelState();
-	public BobeiraState bobeiraState= new BobeiraState();
-	public AnsiedadeState ansiedadeState= new AnsiedadeState();
-	public PiscandoState piscandoState= new PiscandoState();
-	public ThugLifeState thugLifeState= new ThugLifeState();
+	public BobeiraState bobeiraState = new BobeiraState();
+	public AnsiedadeState ansiedadeState = new AnsiedadeState();
+	public PiscandoState piscandoState = new PiscandoState();
+	public ThugLifeState thugLifeState = new ThugLifeState();
 
 	Vector2 originalPosition;
 
@@ -48,55 +48,90 @@ public partial class StateManager : AnimatedSprite2D
 		SearchState();
 	}
 
-	public void SearchState(){
+	public void SearchState()
+	{
 		BaseState newState = currentState;
 
-		if(Input.IsActionJustPressed("RaivaState")){
+		if (Input.IsActionJustPressed("InstagramavelState"))
+		{
+			newState = instagramavelState;
+
+			stateCooldown.WaitTime = 10.0f;
+		}
+		else if (Input.IsActionJustPressed("RaivaState"))
+		{
 			newState = raivaState;
 		}
-		else if(Input.IsActionJustPressed("TristeState")){
-			newState = tristeState;
-		}
-		else if(Input.IsActionJustPressed("FelizState")){
-			newState = felizState;
-		}
-		else if(Input.IsActionJustPressed("MedoState")){
-			newState = medoState;
-		}
-		else if(Input.IsActionJustPressed("CoracaoState")){
-			newState = coracaoState;
-		}
-		else if(Input.IsActionJustPressed("DormindoState")){
-			newState = dormindoState;
+		else
+		{
+			if (Input.IsActionJustPressed("TristeState"))
+			{
+				newState = tristeState;
+			}
+			else if (Input.IsActionJustPressed("FelizState"))
+			{
+				newState = felizState;
+			}
+			else if (Input.IsActionJustPressed("MedoState"))
+			{
+				newState = medoState;
+			}
+			else if (Input.IsActionJustPressed("CoracaoState"))
+			{
+				newState = coracaoState;
+			}
+			else if (Input.IsActionJustPressed("DormindoState"))
+			{
+				newState = dormindoState;
+			}
+			else if (Input.IsActionJustPressed("ThugLifeState"))
+			{
+				newState = thugLifeState;
+			}
+			else if (Input.IsActionJustPressed("PiscandoState"))
+			{
+				newState = piscandoState;
+			}
+			else if (Input.IsActionJustPressed("BobeiraState"))
+			{
+				newState = bobeiraState;
+			}
+			else if (Input.IsActionJustPressed("AnsiedadeState"))
+			{
+				newState = ansiedadeState;
+			}
 		}
 
-		if(newState != currentState)
+		if (newState != currentState)
 		{
 			SwitchState(newState);
 		}
-	}   
+	}
 
 	public void SwitchState(BaseState state)
 	{
-		if(canSwitchState){
+		if (canSwitchState)
+		{
 
-		canSwitchState = false;
-			
-		stateCooldown.Start();
+			canSwitchState = false;
 
-		// sai do estado atual
-		currentState.LeaveState(this);
+			stateCooldown.Start();
 
-		// muda o estado atual
-		currentState = state;
+			// sai do estado atual
+			currentState.LeaveState(this);
 
-		// entra no novo estado
-		currentState.EnterState(this);
+			// muda o estado atual
+			currentState = state;
+
+			// entra no novo estado
+			currentState.EnterState(this);
 		}
 	}
 
 	private void StateCooldown_timeout()
 	{
 		canSwitchState = true;
+
+		stateCooldown.WaitTime = 2.5f;
 	}
 }

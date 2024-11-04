@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cmlirwf2oh2g"]
+[gd_scene load_steps=145 format=3 uid="uid://cmlirwf2oh2g"]
 
 [ext_resource type="Texture2D" uid="uid://bclpjjdnau22v" path="res://Sprites/Background/BackgroundBaseColor.png" id="1_bm6eg"]
 [ext_resource type="Texture2D" uid="uid://b4526m6sqv322" path="res://Sprites/Coração/coração.png" id="1_e5tj5"]
@@ -10,16 +10,42 @@
 [ext_resource type="Texture2D" uid="uid://dnokt8isf2aq3" path="res://Sprites/Feliz/Feliz.png" id="4_flf1q"]
 [ext_resource type="Texture2D" uid="uid://d06yfnaq1ch7" path="res://Sprites/Medo/Medo.png" id="5_wrmvr"]
 [ext_resource type="Texture2D" uid="uid://f6id1r1mdq8j" path="res://Sprites/Raiva/Raiva.png" id="6_23466"]
+[ext_resource type="Texture2D" uid="uid://cpmkimnnp22if" path="res://Sprites/Ansiedade/ansiedadeRosto.png" id="6_lm1e6"]
 [ext_resource type="Texture2D" uid="uid://dt6ddti2ed2rv" path="res://Sprites/Triste/Triste.png" id="7_ksff7"]
+[ext_resource type="Texture2D" uid="uid://cvv7a07tydawd" path="res://Sprites/Bobeira/DeBobeiraRosto.png" id="7_s7icf"]
 [ext_resource type="Texture2D" uid="uid://cmfchjkf6idqw" path="res://Sprites/Coração/CoracaoOlhos.png" id="9_dmgqp"]
 [ext_resource type="Texture2D" uid="uid://c6fuhyj5se38l" path="res://Sprites/Dormindo/OlhoSono.png" id="10_2ki56"]
 [ext_resource type="Texture2D" uid="uid://dtx4duf7kxdkk" path="res://Sprites/Feliz/FelizOlhos.png" id="11_gm4cg"]
+[ext_resource type="Texture2D" uid="uid://dwn20c73bon43" path="res://Sprites/Instagramavel/InstagramavelRosto.png" id="11_sp1iq"]
 [ext_resource type="Texture2D" uid="uid://dbyho0fvu402w" path="res://Sprites/Medo/MedoOlhos.png" id="12_qudl5"]
+[ext_resource type="Texture2D" uid="uid://c44lrayjbbmg6" path="res://Sprites/Piscando/PiscandoOlhos.png" id="13_55r1w"]
 [ext_resource type="Texture2D" uid="uid://c0atyjjkgp8ni" path="res://Sprites/Raiva/RaivaOlhos.png" id="13_olfer"]
 [ext_resource type="Texture2D" uid="uid://c0tuvi8nmvsm0" path="res://Sprites/Background/Blank.png" id="14_s6wbu"]
 [ext_resource type="Texture2D" uid="uid://cwvixyononwny" path="res://Sprites/Dormindo/BocaBabando.png" id="15_j3jr8"]
+[ext_resource type="Texture2D" uid="uid://b2v2qdaf651mu" path="res://Sprites/ThugLife/ThugLifeRosto.png" id="15_qkg25"]
 [ext_resource type="Texture2D" uid="uid://cgab54vy4p4ww" path="res://Sprites/Background/Circuito.png" id="18_014c1"]
+[ext_resource type="Texture2D" uid="uid://eywcfnh0j4oa" path="res://Sprites/Ansiedade/Iris.png" id="18_kiayr"]
+[ext_resource type="Texture2D" uid="uid://cqsjef6mo7ar7" path="res://Sprites/Bobeira/DeBobeiraOlhos.png" id="19_i0hv8"]
 [ext_resource type="Texture2D" uid="uid://032al6s8eada" path="res://Sprites/Background/CircuitoColorido.png" id="19_wjq0i"]
+[ext_resource type="Texture2D" uid="uid://dq2hyqvs4sq0g" path="res://Sprites/Piscando/Iris.png" id="25_vwqxp"]
+[ext_resource type="Texture2D" uid="uid://c7db4scyhix5w" path="res://Sprites/Ansiedade/boca.png" id="28_ilphh"]
+[ext_resource type="Texture2D" uid="uid://b46v8fbihnbem" path="res://Sprites/Piscando/Boca.png" id="30_rqjhe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu83x"]
+atlas = ExtResource("6_lm1e6")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgn31"]
+atlas = ExtResource("6_lm1e6")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1307"]
+atlas = ExtResource("7_s7icf")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypap0"]
+atlas = ExtResource("7_s7icf")
+region = Rect2(240, 0, 240, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gn23v"]
 atlas = ExtResource("1_e5tj5")
@@ -93,6 +119,22 @@ region = Rect2(1792, 0, 256, 128)
 atlas = ExtResource("4_flf1q")
 region = Rect2(2048, 0, 256, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7785"]
+atlas = ExtResource("11_sp1iq")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g00kx"]
+atlas = ExtResource("11_sp1iq")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ippfo"]
+atlas = ExtResource("11_sp1iq")
+region = Rect2(480, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t06p"]
+atlas = ExtResource("11_sp1iq")
+region = Rect2(720, 0, 240, 135)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dkslu"]
 atlas = ExtResource("5_wrmvr")
 region = Rect2(0, 0, 240, 135)
@@ -133,6 +175,10 @@ region = Rect2(1920, 0, 240, 135)
 atlas = ExtResource("5_wrmvr")
 region = Rect2(2160, 0, 240, 135)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5ubo"]
+atlas = ExtResource("13_55r1w")
+region = Rect2(0, 0, 240, 135)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvsm8"]
 atlas = ExtResource("6_23466")
 region = Rect2(0, 0, 240, 135)
@@ -164,6 +210,18 @@ region = Rect2(1440, 0, 240, 135)
 [sub_resource type="AtlasTexture" id="AtlasTexture_j7rhr"]
 atlas = ExtResource("6_23466")
 region = Rect2(1680, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpkyk"]
+atlas = ExtResource("15_qkg25")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd8kv"]
+atlas = ExtResource("15_qkg25")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tw2w"]
+atlas = ExtResource("15_qkg25")
+region = Rect2(480, 0, 240, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpgb3"]
 atlas = ExtResource("7_ksff7")
@@ -203,6 +261,40 @@ region = Rect2(1920, 0, 240, 135)
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu83x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgn31")
+}],
+"loop": true,
+"name": &"AnsiedadeState",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1307")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1307")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1307")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypap0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypap0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1307")
+}],
+"loop": true,
+"name": &"BobeiraState",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gn23v")
@@ -292,6 +384,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_e7785")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g00kx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ippfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t06p")
+}],
+"loop": false,
+"name": &"InstagramavelState",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_dkslu")
 }, {
 "duration": 1.0,
@@ -323,6 +432,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"MedoState",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5ubo")
+}],
+"loop": true,
+"name": &"PiscandoState",
 "speed": 5.0
 }, {
 "frames": [{
@@ -365,6 +482,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gpkyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd8kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tw2w")
+}],
+"loop": false,
+"name": &"ThugLifeState",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wpgb3")
 }, {
 "duration": 1.0,
@@ -395,6 +526,18 @@ animations = [{
 "name": &"TristeState",
 "speed": 9.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8yrr"]
+atlas = ExtResource("18_kiayr")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkdjq"]
+atlas = ExtResource("19_i0hv8")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8a2y"]
+atlas = ExtResource("19_i0hv8")
+region = Rect2(240, 0, 240, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1unc"]
 atlas = ExtResource("9_dmgqp")
@@ -448,6 +591,10 @@ region = Rect2(1792, 0, 256, 128)
 atlas = ExtResource("11_gm4cg")
 region = Rect2(2048, 0, 256, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pajmc"]
+atlas = ExtResource("14_s6wbu")
+region = Rect2(0, 0, 240, 135)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_na52x"]
 atlas = ExtResource("12_qudl5")
 region = Rect2(0, 0, 240, 135)
@@ -488,6 +635,18 @@ region = Rect2(1920, 0, 240, 135)
 atlas = ExtResource("12_qudl5")
 region = Rect2(2160, 0, 240, 135)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj5fa"]
+atlas = ExtResource("25_vwqxp")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djrf2"]
+atlas = ExtResource("25_vwqxp")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3e45"]
+atlas = ExtResource("25_vwqxp")
+region = Rect2(480, 0, 240, 135)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6a8s"]
 atlas = ExtResource("13_olfer")
 region = Rect2(0, 0, 240, 135)
@@ -520,8 +679,43 @@ region = Rect2(1440, 0, 240, 135)
 atlas = ExtResource("13_olfer")
 region = Rect2(1680, 0, 240, 135)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo06n"]
+atlas = ExtResource("14_s6wbu")
+region = Rect2(0, 0, 240, 135)
+
 [sub_resource type="SpriteFrames" id="2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8yrr")
+}],
+"loop": false,
+"name": &"AnsiedadeState",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkdjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkdjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkdjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8a2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8a2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkdjq")
+}],
+"loop": true,
+"name": &"BobeiraState",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r1unc")
@@ -584,6 +778,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pajmc")
+}],
+"loop": true,
+"name": &"InstagramavelState",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_na52x")
 }, {
 "duration": 1.0,
@@ -619,6 +821,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_yj5fa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djrf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3e45")
+}],
+"loop": true,
+"name": &"PiscandoState",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_u6a8s")
 }, {
 "duration": 1.0,
@@ -648,12 +864,37 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lo06n")
+}],
+"loop": true,
+"name": &"ThugLifeState",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_s6wbu")
 }],
 "loop": true,
 "name": &"TristeState",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23vxw"]
+atlas = ExtResource("28_ilphh")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06n2m"]
+atlas = ExtResource("28_ilphh")
+region = Rect2(240, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abaiv"]
+atlas = ExtResource("14_s6wbu")
+region = Rect2(0, 0, 240, 135)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojklb"]
 atlas = ExtResource("14_s6wbu")
@@ -679,8 +920,39 @@ region = Rect2(720, 0, 240, 135)
 atlas = ExtResource("15_j3jr8")
 region = Rect2(960, 0, 240, 135)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_iewh5"]
+atlas = ExtResource("14_s6wbu")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s15o"]
+atlas = ExtResource("30_rqjhe")
+region = Rect2(0, 0, 240, 135)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlxcj"]
+atlas = ExtResource("14_s6wbu")
+region = Rect2(0, 0, 240, 135)
+
 [sub_resource type="SpriteFrames" id="86"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23vxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06n2m")
+}],
+"loop": true,
+"name": &"AnsiedadeState",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abaiv")
+}],
+"loop": true,
+"name": &"BobeiraState",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ojklb")
@@ -737,6 +1009,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_iewh5")
+}],
+"loop": true,
+"name": &"InstagramavelState",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_s6wbu")
 }],
 "loop": false,
@@ -745,10 +1025,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_6s15o")
+}],
+"loop": true,
+"name": &"PiscandoState",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("14_s6wbu")
 }],
 "loop": false,
 "name": &"RaivaState",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlxcj")
+}],
+"loop": true,
+"name": &"ThugLifeState",
 "speed": 5.0
 }, {
 "frames": [{
@@ -869,7 +1165,7 @@ alignment = 1
 position = Vector2(575.76, 331.865)
 scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("1")
-animation = &"FelizState"
+animation = &"BobeiraState"
 script = ExtResource("2_82ctf")
 eyesAnimation = NodePath("../OlhosSprite2D")
 mouthAnimation = NodePath("../BocaSprite2D")
@@ -881,7 +1177,7 @@ CircuitColor = NodePath("../../../Background/BackgroundBox/CircuitoColor")
 position = Vector2(575.76, 331.865)
 scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("2")
-animation = &"FelizState"
+animation = &"BobeiraState"
 script = ExtResource("3_35qcp")
 directionCooldown = NodePath("../../../DirectionCooldown")
 stateManager = NodePath("../RostoSprite2D")
@@ -890,7 +1186,7 @@ stateManager = NodePath("../RostoSprite2D")
 position = Vector2(575.76, 331.865)
 scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("86")
-animation = &"FelizState"
+animation = &"ThugLifeState"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Foreground"]
 root_node = NodePath("../ForegorundBox/RostoSprite2D")

@@ -47,7 +47,8 @@ public partial class VariantManager : AnimatedSprite2D
 
 	public void SearchDirection()
 	{		
-		if(stateManager.currentState == stateManager.dormindoState){
+		if(stateManager.currentState == stateManager.dormindoState || 
+		stateManager.currentState == stateManager.instagramavelState){
 			return;
 		}
 		if(canSearchDirection) {
