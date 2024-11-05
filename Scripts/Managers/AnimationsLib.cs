@@ -39,17 +39,17 @@ public partial class AnimationsLib : Node
     {
         if(!loop)
         {
-            Tween tween = target.CreateTween().SetLoops(0);
+            tween.SetLoops(0);
 
             tween.TweenProperty(target, "modulate", targetColor, speed);
         }
         else
         {
-            Tween tween = target.CreateTween().SetLoops();
+            tween.SetLoops();
 
-            tween.TweenProperty(target, "modulate", new Color(1, 0.65f, 0, 0.5f), 0.75f);
-            tween.TweenProperty(target, "modulate", new Color(1.0f, 0.41f, 0.71f, 0.5f), 0.75f);
-            tween.TweenProperty(target, "modulate", new Color(0.0f, 1.0f, 0.0f, 0.5f), 0.75f);
+            tween.TweenProperty(target, "modulate", new Color(1, 0.65f, 0), 0.4f);
+            tween.TweenProperty(target, "modulate", new Color(1.0f, 0.41f, 0.71f), 0.4f);
+            tween.TweenProperty(target, "modulate", new Color(0.0f, 1.0f, 0.0f), 0.4f);
         }
     }
 }
