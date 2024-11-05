@@ -13,11 +13,9 @@ public partial class VariantManager : AnimatedSprite2D
 
 	private AnimationPlayer animationPlayer;
 
-	AnimationsLib animationsLib = new AnimationsLib();
+	public AnimationsLib animationsLib;
 
 	Vector2 originalPositionEyes, originalPositionFace;
-
-	Tween tween;
 
 	float moveSpeedEyes = 0.5f, moveSpeedFace = 0.5f, moveSpeedMouth = 0.5f; // Ajusta a velocidade que se move
 
@@ -26,6 +24,8 @@ public partial class VariantManager : AnimatedSprite2D
 	public override void _Ready()
 	{
 		eyesAnimation = this;
+
+		animationsLib = new AnimationsLib(this);
 
 		faceAnimation = stateManager.faceAnimation;
 		mouthAnimation = stateManager.mouthAnimation;

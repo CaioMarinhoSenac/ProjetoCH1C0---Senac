@@ -3,6 +3,15 @@ using System;
 
 public partial class AnimationsLib : Node
 {
+    AnimatedSprite2D target;
+    
+    Tween tween;
+
+    public AnimationsLib (AnimatedSprite2D target){
+        this.target = target;
+
+        tween = target.GetTree().CreateTween();
+    }
     public void MoveToDirection(AnimatedSprite2D target, Vector2 targetPosition, float moveSpeed)
     {
         MoveTo(target, targetPosition, moveSpeed);
@@ -18,8 +27,6 @@ public partial class AnimationsLib : Node
 
     private void MoveTo(AnimatedSprite2D target, Vector2 targetPosition, float moveSpeed)
     {
-        Tween tween = target.CreateTween();
-
         tween.TweenProperty(target, "position", targetPosition, moveSpeed);
     }
 
@@ -30,8 +37,6 @@ public partial class AnimationsLib : Node
 
     public void SwitchColor(Sprite2D target, Color targetColor, float speed, bool loop)
     {
-        Tween tween = target.CreateTween();
-
         if(!loop)
         {
             tween.SetLoops(0);

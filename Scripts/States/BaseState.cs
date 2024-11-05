@@ -3,7 +3,7 @@ using System;
 
 public partial class BaseState : AnimatedSprite2D
 {
-	protected AnimationsLib animationsLib = new AnimationsLib();
+	protected AnimationsLib animationsLib;
 
 	protected StateManager StateManager;
 
@@ -11,9 +11,11 @@ public partial class BaseState : AnimatedSprite2D
 
 	protected bool loopColor = false;
 
-	public virtual void EnterState(StateManager State)
+	public virtual void EnterState(StateManager State, VariantManager Variant)
 	{
 		StateManager = State;
+
+		animationsLib = State.animationsLib;
 
 		SwitchStateAnimation();
 

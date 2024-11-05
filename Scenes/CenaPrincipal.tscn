@@ -1161,13 +1161,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "tristeTimer", "dormindoTimer", "stateCooldown", "animationPlayer", "CircuitColor")]
+[node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("mouthAnimation", "tristeTimer", "dormindoTimer", "stateCooldown", "animationPlayer", "CircuitColor")]
 position = Vector2(575.76, 331.865)
 scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("1")
 animation = &"FelizState"
 script = ExtResource("2_82ctf")
-eyesAnimation = NodePath("../OlhosSprite2D")
 mouthAnimation = NodePath("../BocaSprite2D")
 tristeTimer = NodePath("../../../Timers/TristeTimer")
 dormindoTimer = NodePath("../../../Timers/DormindoTimer")

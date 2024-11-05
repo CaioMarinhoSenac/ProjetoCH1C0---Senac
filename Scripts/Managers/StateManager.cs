@@ -4,7 +4,7 @@ using System;
 public partial class StateManager : AnimatedSprite2D
 {
 	public AnimatedSprite2D faceAnimation;
-	[Export] public VariantManager eyesAnimation;
+	public VariantManager eyesAnimation;
 	[Export] public AnimatedSprite2D mouthAnimation;
 	[Export] public Timer tristeTimer;
 	[Export] public Timer dormindoTimer;
@@ -34,8 +34,14 @@ public partial class StateManager : AnimatedSprite2D
 
 	[Export] public Sprite2D CircuitColor;
 
+	public AnimationsLib animationsLib;
+
 	public override void _Ready()
 	{
+		eyesAnimation = GetNode<VariantManager>("../OlhosSprite2D");
+
+		animationsLib = new AnimationsLib(this);
+
 		faceAnimation = this;
 
 		originalPosition = faceAnimation.Position;
@@ -43,7 +49,7 @@ public partial class StateManager : AnimatedSprite2D
 		stateCooldown.Timeout += StateCooldown_timeout;
 
 		currentState = felizState;
-		currentState.EnterState(this);
+		currentState.EnterState(this, eyesAnimation);
 
 		tristeTimer.Start();
 		dormindoTimer.Start();
@@ -133,7 +139,7 @@ public partial class StateManager : AnimatedSprite2D
 			currentState = state;
 
 			// entra no novo estado
-			currentState.EnterState(this);
+			currentState.EnterState(this, eyesAnimation);
 		}
 	}
 
