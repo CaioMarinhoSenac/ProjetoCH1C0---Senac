@@ -19,7 +19,9 @@ public partial class VariantManager : AnimatedSprite2D
 
 	Tween tween;
 
-	float moveSpeedEyes = 0.5f, moveSpeedFace = 0.5f, moveSpeedMouth = 0.5f; // Ajusta a velocidade que se move
+	static float defaultMoveSpeed = 0.5f;
+
+	float moveSpeedEyes = defaultMoveSpeed, moveSpeedFace = defaultMoveSpeed, moveSpeedMouth = defaultMoveSpeed; // Ajusta a velocidade que se move
 
 	float moveDistanceEyes = 50.0f, moveDistanceFace = 25.0f; // Ajusta o quanto se move
 	
@@ -52,6 +54,7 @@ public partial class VariantManager : AnimatedSprite2D
 			return;
 		}
 		if(canSearchDirection) {
+
 		Vector2 targetPositionEyes = eyesAnimation.Position;
 		Vector2 targetPositionFace = faceAnimation.Position;
 		Vector2 targetPositionMouth = mouthAnimation.Position;
@@ -145,15 +148,31 @@ public partial class VariantManager : AnimatedSprite2D
 			canSearchDirection = false;
 
 			directionCooldown.Start();
+
+			if(stateManager.currentState == stateManager.ansiedadeState || stateManager.currentState == stateManager.medoState)
+			{
+				SetMoveSpeeds(defaultMoveSpeed / 2.5f);
+			}
 			
 			animationsLib.MoveToDirection(eyesAnimation, targetPositionEyes, moveSpeedEyes);
 			animationsLib.MoveToDirection(faceAnimation, targetPositionFace, moveSpeedFace);
 			animationsLib.MoveToDirection(mouthAnimation, targetPositionMouth, moveSpeedMouth);
+
+			if(moveSpeedEyes != defaultMoveSpeed)
+			{
+				SetMoveSpeeds(defaultMoveSpeed);
+			}
 		}
 		}
 	}
 	private void DirectionCooldown_timeout()
 	{
 		canSearchDirection = true;
+	}
+
+	private void SetMoveSpeeds(float newSpeed){
+		moveSpeedEyes = newSpeed;
+		moveSpeedFace = newSpeed;
+		moveSpeedMouth = newSpeed;
 	}
 }
