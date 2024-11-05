@@ -7,7 +7,7 @@
 
 ###
 
-<h4 align="center">O projeto CHICO é uma iniciativa desenvolvida por professores e alunos das faculdades de Desenvolvimento de Jogos Digitais e Análise e Desenvolvimento de Sistemas do SENAC, em parceria com o SEBRAE. Nosso objetivo é unir o movimento DIY (Do it Yourself) e criatividade, criando uma experiência interativa com tecnologias IoT integradas ao personagem Chico, um caranguejo que convida o público à novas formas de interação para o REC'n'Play 2024.</h4>
+<h4 align="center">O projeto CHICO é uma iniciativa do SEBRAE em parceria com o SENAC e ARTEC, desenvolvida por alunos e professores dos cursos de Desenvolvimeto de Jogos Digitais e Análise e Desenvolvimento de Sistemas. Nosso objetivo é unir o movimento DIY (Do it Yourself) e criatividade, criando uma experiência interativa com tecnologias IoT integradas ao personagem Chico, um caranguejo que convida o público à novas formas de interação para o REC'n'Play 2024.</h4>
 
 ###
 
