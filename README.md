@@ -11,6 +11,10 @@
 
 ###
 
+<h2 align="center"><a href="https://projeto-chico.vercel.app/">🦀 Visite Nosso Site 🦀</a></h2>
+
+###
+
 <div align="center">
   <img height="350" src="https://github.com/user-attachments/assets/5095859e-0edd-4597-9152-d11b014a360a"  />
 </div>
