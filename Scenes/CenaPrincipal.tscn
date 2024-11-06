@@ -1225,47 +1225,36 @@ TristeState = NodePath("TristeState")
 
 [node name="AnsiedadeState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("32_e2b2s")
-parameters/looping = true
 
 [node name="BobeiraState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("33_8627j")
-parameters/looping = true
 
 [node name="CoracaoState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("34_utefd")
-parameters/looping = true
 
 [node name="DormindoState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("35_nivk8")
-parameters/looping = true
 
 [node name="FelizState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("36_486cg")
-parameters/looping = true
 
 [node name="InstagramavelState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("37_wrwnd")
-parameters/looping = true
 
 [node name="MedoState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("38_3wdk6")
-parameters/looping = true
 
 [node name="PiscandoState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("39_a17ov")
-parameters/looping = true
 
 [node name="RaivaState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("40_qu4l6")
-parameters/looping = true
 
 [node name="ThugLifeState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("41_1wnrd")
-parameters/looping = true
 
 [node name="TristeState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("42_1ax0s")
-parameters/looping = true
 
 [node name="Timers" type="Node" parent="."]
 
