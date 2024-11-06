@@ -7,10 +7,12 @@ public partial class CanvasScript : CanvasLayer
 
 	[Export] public Gradient gradient;
 
-
+	[Export] public AudioManager audioManager;
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Hidden;
+
+		audioManager.musicaFundo.Play();
     }
 
     public override void _Process(double delta)

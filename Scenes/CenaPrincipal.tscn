@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=3 uid="uid://cmlirwf2oh2g"]
+[gd_scene load_steps=158 format=3 uid="uid://cmlirwf2oh2g"]
 
 [ext_resource type="Texture2D" uid="uid://bclpjjdnau22v" path="res://Sprites/Background/BackgroundBaseColor.png" id="1_bm6eg"]
 [ext_resource type="Texture2D" uid="uid://b4526m6sqv322" path="res://Sprites/Coração/coração.png" id="1_e5tj5"]
@@ -42,6 +42,7 @@
 [ext_resource type="AudioStream" uid="uid://bdjsa5cbt7plr" path="res://Audios/RaivaAudio.mp3" id="40_qu4l6"]
 [ext_resource type="AudioStream" uid="uid://c1ohsvft1dnyf" path="res://Audios/ThugLifeAudio.mp3" id="41_1wnrd"]
 [ext_resource type="AudioStream" uid="uid://b65ifclx761a7" path="res://Audios/TristeAudio.mp3" id="42_1ax0s"]
+[ext_resource type="AudioStream" uid="uid://bdah8jkh0sgi6" path="res://Audios/MusicaAmbiente.mp3" id="43_mk00n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu83x"]
 atlas = ExtResource("6_lm1e6")
@@ -1114,10 +1115,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="CanvasLayer" parent="." node_paths=PackedStringArray("canvasModulate")]
+[node name="Background" type="CanvasLayer" parent="." node_paths=PackedStringArray("canvasModulate", "audioManager")]
 script = ExtResource("1_wpjin")
 canvasModulate = NodePath("CicloDia")
 gradient = ExtResource("2_xowkv")
+audioManager = NodePath("../Audios")
 
 [node name="BackgroundBaseColor" type="Sprite2D" parent="Background"]
 modulate = Color(0.0823529, 0.478431, 0, 1)
@@ -1209,7 +1211,7 @@ libraries = {
 "": SubResource("AnimationLibrary_kjcqx")
 }
 
-[node name="Audios" type="Node" parent="." node_paths=PackedStringArray("AnsiedadeState", "BobeiraState", "CoracaoState", "DormindoState", "FelizState", "InstagramavelState", "MedoState", "PiscandoState", "RaivaState", "ThugLifeState", "TristeState")]
+[node name="Audios" type="Node" parent="." node_paths=PackedStringArray("AnsiedadeState", "BobeiraState", "CoracaoState", "DormindoState", "FelizState", "InstagramavelState", "MedoState", "PiscandoState", "RaivaState", "ThugLifeState", "TristeState", "musicaFundo")]
 script = ExtResource("31_h2nhm")
 AnsiedadeState = NodePath("AnsiedadeState")
 BobeiraState = NodePath("BobeiraState")
@@ -1222,6 +1224,7 @@ PiscandoState = NodePath("PiscandoState")
 RaivaState = NodePath("RaivaState")
 ThugLifeState = NodePath("ThugLifeState")
 TristeState = NodePath("TristeState")
+musicaFundo = NodePath("MusicaFundo")
 
 [node name="AnsiedadeState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("32_e2b2s")
@@ -1255,6 +1258,10 @@ stream = ExtResource("41_1wnrd")
 
 [node name="TristeState" type="AudioStreamPlayer2D" parent="Audios"]
 stream = ExtResource("42_1ax0s")
+
+[node name="MusicaFundo" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("43_mk00n")
+parameters/looping = true
 
 [node name="Timers" type="Node" parent="."]
 

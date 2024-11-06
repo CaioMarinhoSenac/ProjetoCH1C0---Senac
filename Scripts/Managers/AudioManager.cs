@@ -14,4 +14,5 @@ public partial class AudioManager : Node
     [Export] public AudioStreamPlayer2D RaivaState;
     [Export] public AudioStreamPlayer2D ThugLifeState;
     [Export] public AudioStreamPlayer2D TristeState;
+    [Export] public AudioStreamPlayer2D musicaFundo;
 }
