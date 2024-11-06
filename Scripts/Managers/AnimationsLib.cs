@@ -47,4 +47,17 @@ public partial class AnimationsLib : Node
             tween.TweenProperty(target, "modulate", new Color(0.0f, 1.0f, 0.0f), 0.4f);
         }
     }
+
+    public void FadeOutAudio(AudioStreamPlayer2D audio, float duration)
+    {
+        Tween tween = audio.CreateTween();
+        
+        tween.TweenProperty(audio, "volume_db", -80, duration);
+
+        tween.Finished += () => FadeOutFinished(audio);
+    }
+
+    private void FadeOutFinished(AudioStreamPlayer2D audio){
+        audio.Stop();
+    }
 }

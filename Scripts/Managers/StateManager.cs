@@ -34,6 +34,8 @@ public partial class StateManager : AnimatedSprite2D
 
 	[Export] public Sprite2D CircuitColor;
 
+	[Export] public AudioManager audioManager;
+
 	public override void _Ready()
 	{
 		faceAnimation = this;

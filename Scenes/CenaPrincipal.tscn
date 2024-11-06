@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://cmlirwf2oh2g"]
+[gd_scene load_steps=157 format=3 uid="uid://cmlirwf2oh2g"]
 
 [ext_resource type="Texture2D" uid="uid://bclpjjdnau22v" path="res://Sprites/Background/BackgroundBaseColor.png" id="1_bm6eg"]
 [ext_resource type="Texture2D" uid="uid://b4526m6sqv322" path="res://Sprites/Coração/coração.png" id="1_e5tj5"]
@@ -30,6 +30,18 @@
 [ext_resource type="Texture2D" uid="uid://dq2hyqvs4sq0g" path="res://Sprites/Piscando/Iris.png" id="25_vwqxp"]
 [ext_resource type="Texture2D" uid="uid://c7db4scyhix5w" path="res://Sprites/Ansiedade/boca.png" id="28_ilphh"]
 [ext_resource type="Texture2D" uid="uid://b46v8fbihnbem" path="res://Sprites/Piscando/Boca.png" id="30_rqjhe"]
+[ext_resource type="Script" path="res://Scripts/Managers/AudioManager.cs" id="31_h2nhm"]
+[ext_resource type="AudioStream" uid="uid://vk1gvl5x377b" path="res://Audios/AnsiedadeAudio.mp3" id="32_e2b2s"]
+[ext_resource type="AudioStream" uid="uid://d01e3m7ajayqc" path="res://Audios/BobeiraAudio.mp3" id="33_8627j"]
+[ext_resource type="AudioStream" uid="uid://ds0c2s78u5e5i" path="res://Audios/CoracaoAudio.mp3" id="34_utefd"]
+[ext_resource type="AudioStream" uid="uid://brwcfhc8ltf5q" path="res://Audios/DormindoAudio.mp3" id="35_nivk8"]
+[ext_resource type="AudioStream" uid="uid://x3fgtwpufyps" path="res://Audios/FelizAudio.mp3" id="36_486cg"]
+[ext_resource type="AudioStream" uid="uid://btqc4pbw5y1qc" path="res://Audios/InstagramavelAudio.mp3" id="37_wrwnd"]
+[ext_resource type="AudioStream" uid="uid://drqifvhr7fdbg" path="res://Audios/MedoAudio.mp3" id="38_3wdk6"]
+[ext_resource type="AudioStream" uid="uid://bi5qe76jsf6e3" path="res://Audios/PiscandoAudio.mp3" id="39_a17ov"]
+[ext_resource type="AudioStream" uid="uid://bdjsa5cbt7plr" path="res://Audios/RaivaAudio.mp3" id="40_qu4l6"]
+[ext_resource type="AudioStream" uid="uid://c1ohsvft1dnyf" path="res://Audios/ThugLifeAudio.mp3" id="41_1wnrd"]
+[ext_resource type="AudioStream" uid="uid://b65ifclx761a7" path="res://Audios/TristeAudio.mp3" id="42_1ax0s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yu83x"]
 atlas = ExtResource("6_lm1e6")
@@ -1161,7 +1173,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 alignment = 1
 
-[node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "tristeTimer", "dormindoTimer", "stateCooldown", "animationPlayer", "CircuitColor")]
+[node name="RostoSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("eyesAnimation", "mouthAnimation", "tristeTimer", "dormindoTimer", "stateCooldown", "animationPlayer", "CircuitColor", "audioManager")]
 position = Vector2(575.76, 331.865)
 scale = Vector2(3.673, 3.673)
 sprite_frames = SubResource("1")
@@ -1174,6 +1186,7 @@ dormindoTimer = NodePath("../../../Timers/DormindoTimer")
 stateCooldown = NodePath("../../../Timers/StateCooldown")
 animationPlayer = NodePath("../../AnimationPlayer")
 CircuitColor = NodePath("../../../Background/BackgroundBox/CircuitoColor")
+audioManager = NodePath("../../../Audios")
 
 [node name="OlhosSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("directionCooldown", "stateManager")]
 position = Vector2(575.76, 331.865)
@@ -1196,7 +1209,63 @@ libraries = {
 "": SubResource("AnimationLibrary_kjcqx")
 }
 
-[node name="Audios" type="Node" parent="."]
+[node name="Audios" type="Node" parent="." node_paths=PackedStringArray("AnsiedadeState", "BobeiraState", "CoracaoState", "DormindoState", "FelizState", "InstagramavelState", "MedoState", "PiscandoState", "RaivaState", "ThugLifeState", "TristeState")]
+script = ExtResource("31_h2nhm")
+AnsiedadeState = NodePath("AnsiedadeState")
+BobeiraState = NodePath("BobeiraState")
+CoracaoState = NodePath("CoracaoState")
+DormindoState = NodePath("DormindoState")
+FelizState = NodePath("FelizState")
+InstagramavelState = NodePath("InstagramavelState")
+MedoState = NodePath("MedoState")
+PiscandoState = NodePath("PiscandoState")
+RaivaState = NodePath("RaivaState")
+ThugLifeState = NodePath("ThugLifeState")
+TristeState = NodePath("TristeState")
+
+[node name="AnsiedadeState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("32_e2b2s")
+parameters/looping = true
+
+[node name="BobeiraState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("33_8627j")
+parameters/looping = true
+
+[node name="CoracaoState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("34_utefd")
+parameters/looping = true
+
+[node name="DormindoState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("35_nivk8")
+parameters/looping = true
+
+[node name="FelizState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("36_486cg")
+parameters/looping = true
+
+[node name="InstagramavelState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("37_wrwnd")
+parameters/looping = true
+
+[node name="MedoState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("38_3wdk6")
+parameters/looping = true
+
+[node name="PiscandoState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("39_a17ov")
+parameters/looping = true
+
+[node name="RaivaState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("40_qu4l6")
+parameters/looping = true
+
+[node name="ThugLifeState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("41_1wnrd")
+parameters/looping = true
+
+[node name="TristeState" type="AudioStreamPlayer2D" parent="Audios"]
+stream = ExtResource("42_1ax0s")
+parameters/looping = true
 
 [node name="Timers" type="Node" parent="."]
 
