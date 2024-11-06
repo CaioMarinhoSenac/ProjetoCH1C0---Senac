@@ -1184,7 +1184,7 @@ dormindoTimer = NodePath("../../../Timers/DormindoTimer")
 stateCooldown = NodePath("../../../Timers/StateCooldown")
 animationPlayer = NodePath("../../AnimationPlayer")
 CircuitColor = NodePath("../../../Background/BackgroundBox/CircuitoColor")
-audioManager = NodePath("../../../Audios")
+audioManager = NodePath(".")
 
 [node name="OlhosSprite2D" type="AnimatedSprite2D" parent="Foreground/ForegorundBox" node_paths=PackedStringArray("directionCooldown", "stateManager")]
 position = Vector2(575.76, 331.865)
