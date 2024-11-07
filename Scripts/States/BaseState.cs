@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq.Expressions;
 
 public partial class BaseState : AnimatedSprite2D
 {
@@ -11,9 +12,15 @@ public partial class BaseState : AnimatedSprite2D
 
 	protected AudioManager audioManager;
 
+	protected Timer audioLoopTimer;
+
+	protected float loopCooldown = 0f;
+
 	protected AudioStreamPlayer2D audioSample;
 
 	protected bool loopColor = false;
+
+	private bool isAudioConnected = false;
 
 	public virtual void EnterState(StateManager State)
 	{
@@ -25,13 +32,19 @@ public partial class BaseState : AnimatedSprite2D
 
 		SwitchCircuitColor(stateColor);
 
-		string audioName = GetType().Name;
+		if (this.GetType().Name != "BobeiraState" && this.GetType().Name != "InstagramavelState")
+		{
+			audioSample = SearchAudioSample(this.GetType().Name);
 
-		audioSample = PlaySFX(audioName);
+			animationsLib.PlaySFX(audioSample);
+		}
 	}
 	public virtual void LeaveState(StateManager State)
 	{
-		animationsLib.FadeOutAudio(audioSample, 2f);
+		if (audioSample != null) 
+        {
+            audioSample.Stop();
+        }
 	}
 
 	public virtual void SwitchStateAnimation()
@@ -51,14 +64,12 @@ public partial class BaseState : AnimatedSprite2D
 		animationsLib.SwitchColor(StateManager.CircuitColor, stateColor, 1.0f, loopColor);
 	}
 
-	protected AudioStreamPlayer2D PlaySFX(string audioName)
-	{
-		AudioStreamPlayer2D audioClip = audioManager.GetType().GetField(audioName)?.GetValue(audioManager) as AudioStreamPlayer2D;
+	protected AudioStreamPlayer2D SearchAudioSample(string audioName)
+    {
+        AudioStreamPlayer2D audioRef = audioManager.GetType().GetField(audioName)?.GetValue(audioManager) as AudioStreamPlayer2D;
 
-		audioClip.VolumeDb = 0;
+        if (audioRef != null) return audioRef;
 
-		audioClip.Play();
-
-		return audioClip;
-	}
+        else return null;
+    }
 }

@@ -45,13 +45,14 @@ public partial class StateManager : AnimatedSprite2D
 		stateCooldown.Timeout += StateCooldown_timeout;
 
 		currentState = felizState;
-		currentState.EnterState(this);
 
 		tristeTimer.Start();
 		dormindoTimer.Start();
 
 		tristeTimer.Timeout += TristeTimer_timeout;
 		dormindoTimer.Timeout += DormindoTimer_timeout;
+
+		currentState.EnterState(this);
 	}
 
 	public override void _Process(double delta)
@@ -67,11 +68,13 @@ public partial class StateManager : AnimatedSprite2D
 		{
 			newState = instagramavelState;
 
-			stateCooldown.WaitTime = 10.0f;
+			stateCooldown.WaitTime = 5f;
 		}
-		else if (Input.IsActionJustPressed("RaivaState"))
+		else if (Input.IsActionJustPressed("CoracaoState"))
 		{
-			newState = raivaState;
+			newState = coracaoState;
+
+			stateCooldown.WaitTime = 5f;
 		}
 		else
 		{
@@ -82,10 +85,8 @@ public partial class StateManager : AnimatedSprite2D
 			else if (Input.IsActionJustPressed("MedoState"))
 			{
 				newState = medoState;
-			}
-			else if (Input.IsActionJustPressed("CoracaoState"))
-			{
-				newState = coracaoState;
+
+				stateCooldown.WaitTime = 1.75f;
 			}
 			else if (Input.IsActionJustPressed("ThugLifeState"))
 			{
@@ -103,11 +104,15 @@ public partial class StateManager : AnimatedSprite2D
 			{
 				newState = ansiedadeState;
 			}
+			else if (Input.IsActionJustPressed("RaivaState"))
+			{
+				newState = raivaState;
+			}
 		}
 
 		if (newState != currentState)
 		{
-			if(currentState == dormindoState)
+			if (currentState == dormindoState)
 			{
 				SwitchState(ansiedadeState);
 			}
@@ -115,7 +120,7 @@ public partial class StateManager : AnimatedSprite2D
 			{
 				SwitchState(newState);
 			}
-			
+
 			ResetTimers();
 		}
 	}
@@ -126,7 +131,7 @@ public partial class StateManager : AnimatedSprite2D
 		{
 			// sai do estado atual
 			currentState.LeaveState(this);
-			
+
 			canSwitchState = false;
 
 			stateCooldown.Start();

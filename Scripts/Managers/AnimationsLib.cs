@@ -48,16 +48,8 @@ public partial class AnimationsLib : Node
         }
     }
 
-    public void FadeOutAudio(AudioStreamPlayer2D audio, float duration)
-    {
-        Tween tween = audio.CreateTween();
-        
-        tween.TweenProperty(audio, "volume_db", -80, duration);
-
-        tween.Finished += () => FadeOutFinished(audio);
-    }
-
-    private void FadeOutFinished(AudioStreamPlayer2D audio){
-        audio.Stop();
-    }
+    public void PlaySFX(AudioStreamPlayer2D audioName)
+	{
+		audioName.Play();
+	}
 }
