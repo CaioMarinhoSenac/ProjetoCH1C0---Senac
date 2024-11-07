@@ -1261,17 +1261,16 @@ parameters/looping = true
 [node name="Timers" type="Node" parent="."]
 
 [node name="StateCooldown" type="Timer" parent="Timers"]
-wait_time = 2.5
+wait_time = 2.0
 one_shot = true
 
 [node name="DirectionCooldown" type="Timer" parent="Timers"]
-wait_time = 1.75
-one_shot = true
-
-[node name="DormindoTimer" type="Timer" parent="Timers"]
-wait_time = 120.0
 one_shot = true
 
 [node name="TristeTimer" type="Timer" parent="Timers"]
 wait_time = 60.0
+one_shot = true
+
+[node name="DormindoTimer" type="Timer" parent="Timers"]
+wait_time = 120.0
 one_shot = true

@@ -148,7 +148,7 @@ public partial class StateManager : AnimatedSprite2D
 	{
 		canSwitchState = true;
 
-		stateCooldown.WaitTime = 2.5f;
+		stateCooldown.WaitTime = 2f;
 	}
 
 	private void TristeTimer_timeout()
@@ -161,7 +161,7 @@ public partial class StateManager : AnimatedSprite2D
 		SwitchState(dormindoState);
 	}
 
-	private void ResetTimers()
+	public void ResetTimers()
 	{
 		tristeTimer.Stop();
 		dormindoTimer.Stop();

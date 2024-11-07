@@ -162,6 +162,8 @@ public partial class VariantManager : AnimatedSprite2D
 			{
 				SetMoveSpeeds(defaultMoveSpeed);
 			}
+
+			stateManager.ResetTimers();
 		}
 		}
 	}
